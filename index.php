@@ -9,5 +9,8 @@
 
   <body>
     <h1>Bosques de Santa Fe</h1>
+    <button>Registro</button>
+    <button>Servicios Realizados</button>
+    <button>Tarifas</button>
   </body>
 </html>
