@@ -16,7 +16,7 @@ $(document).ready(function() {
 
         datos["id"] = id;
 
-        console.log("Datos enviados:", datos); // Debugging
+        console.log("Datos enviados:", datos); // Debugeamos
 
         $.ajax({
             url: "tarifasAc.php",

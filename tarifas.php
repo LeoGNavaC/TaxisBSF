@@ -31,25 +31,25 @@
         <div>
             <table border="1">
                 <tr>
+                    <th>ID</th>
                     <th>Tarifa base</th>
                     <th>Tarifa por KM</th>
                     <th>IVA</th>
                     <th>PROPINA</th>
                 </tr>
-                <?php
-                    if(mysqli_num_rows($sqlusu) > 0){
-                        while($mostrar1 = mysqli_fetch_assoc($sqlusu)){
-                            echo "<tr>";
-                            echo "<td>" . $mostrar1['tarifabase'] . "</td>";
-                            echo "<td>" . $mostrar1['tarifaporkm'] . "</td>";
-                            echo "<td>" . $mostrar1['iva'] . "</td>";
-                            echo "<td>" . $mostrar1['propina'] . "</td>";
-                            echo "</tr>"; 
-                        }
-                    } else {
-                        echo "<tr><td colspan='4'>No hay registros disponibles</td></tr>";
-                    }
-                ?>
+                <?php while($mostrar1 = mysqli_fetch_assoc($sqlusu)) {?>
+                    <tr id="fila-<?php echo $mostrar1['id']; ?>">
+                        <td><?php echo $mostrar1['id']; ?></td>
+                        <td contenteditable="false" class="editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="tarifabase"><?php echo $mostrar1['tarifabase']; ?></td>
+                        <td contenteditable="false" class="editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="tarifaporkm"><?php echo $mostrar1['tarifaporkm']; ?></td>
+                        <td contenteditable="false" class="editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="iva"><?php echo $mostrar1['iva']; ?></td>
+                        <td contenteditable="false" class="editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="propina"><?php echo $mostrar1['propina']; ?></td>
+                        <td>
+                            <button class="editar-btn" data-id="<?php echo $mostrar1['id'] ?>">Editar</button>
+                            <button class="editar-btn" data-id="<?php echo $mostrar1['id'] ?>">Guardar</button>
+                        </td>
+                    </tr>
+                <?php } ?>
             </table>
         </div>
 
@@ -76,15 +76,15 @@
                     <th>OPCIONES</th>
                 </tr>
                 <?php while($mostrar2 = mysqli_fetch_assoc($sqlcon)) {?>
-                <tr id="fila-<?php echo $mostrar2['id']; ?>">
-                    <td><?php echo $mostrar2['id']; ?></td>
-                    <td contenteditable="false" class="editable" data-id="<?php echo $mostrar2['id']; ?>" data-columna="nombre"><?php echo $mostrar2['nombre'] ?></td>
-                    <td contenteditable="false" class="editable" data-id="<?php echo $mostrar2['id']; ?>" data-columna="unidad"><?php echo $mostrar2['unidad'] ?></td>
-                    <td>
-                        <button class="editar-btn" data-id="<?php echo $mostrar2['id']; ?>">Editar</button>
-                        <button class="guardar-btn" data-id="<?php echo $mostrar2['id']; ?>">Guardar</button>
-                    </td>
-                </tr>
+                    <tr id="fila-<?php echo $mostrar2['id']; ?>">
+                        <td><?php echo $mostrar2['id']; ?></td>
+                        <td contenteditable="false" class="editable" data-id="<?php echo $mostrar2['id']; ?>" data-columna="nombre"><?php echo $mostrar2['nombre']; ?></td>
+                        <td contenteditable="false" class="editable" data-id="<?php echo $mostrar2['id']; ?>" data-columna="unidad"><?php echo $mostrar2['unidad']; ?></td>
+                        <td>
+                            <button class="editar-btn" data-id="<?php echo $mostrar2['id']; ?>">Editar</button>
+                            <button class="guardar-btn" data-id="<?php echo $mostrar2['id']; ?>">Guardar</button>
+                        </td>
+                    </tr>
                 <?php } ?>
             </table>
         </div>
