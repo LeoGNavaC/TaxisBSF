@@ -15,6 +15,7 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
+        <link rel="icon" type="image/*" href="Imagenes/BSFicon.png">
         <title>Servicios Realizados</title>
     </head>
     <body>
@@ -37,18 +38,18 @@
                 if (mysqli_num_rows($sqlusu) > 0) {
                     while ($mostrar = mysqli_fetch_assoc($sqlusu)) {
                         echo "<tr>";
-                        echo "<td>" . $mostrar['fecha'] . "</td>";
-                        echo "<td>" . $mostrar['unidad'] . "</td>";
-                        echo "<td>" . $mostrar['formadepago'] . "</td>";
-                        echo "<td>" . $mostrar['accion'] . "</td>";
-                        echo "<td>" . $mostrar['nombredelsocio'] . "</td>";
-                        echo "<td>" . $mostrar['origen'] . "</td>";
-                        echo "<td>" . $mostrar['destino'] . "</td>";
-                        echo "<td>" . $mostrar['colonia'] . "</td>";
-                        echo "<td>" . $mostrar['km'] . "</td>";
-                        echo "<td>" . $mostrar['tarifa'] . "</td>";
-                        echo "<td>" . $mostrar['tag'] . "</td>";
-                        echo "<td>" . $mostrar['sumatotaldeviaje'] . "</td>";
+                            echo "<td>" . $mostrar['fecha'] . "</td>";
+                            echo "<td>" . $mostrar['unidad'] . "</td>";
+                            echo "<td>" . $mostrar['formadepago'] . "</td>";
+                            echo "<td>" . $mostrar['accion'] . "</td>";
+                            echo "<td>" . $mostrar['nombredelsocio'] . "</td>";
+                            echo "<td>" . $mostrar['origen'] . "</td>";
+                            echo "<td>" . $mostrar['destino'] . "</td>";
+                            echo "<td>" . $mostrar['colonia'] . "</td>";
+                            echo "<td>" . $mostrar['km'] . "</td>";
+                            echo "<td>" . $mostrar['tarifa'] . "</td>";
+                            echo "<td>" . $mostrar['tag'] . "</td>";
+                            echo "<td>" . $mostrar['sumatotaldeviaje'] . "</td>";
                         echo "</tr>";
                     }
                 } else {
