@@ -3,8 +3,8 @@
 
     $filasmax1  = 10;
     $filasmax2  = 10;
-    $pagina1    = isset($_GET['pag']) ? (int)$_GET['pag'] : 1;
-    $pagina2    = isset($_GET['pag']) ? (int)$_GET['pag'] : 1;
+    $pagina1    = isset($_GET['pag1']) ? (int)$_GET['pag1'] : 1;
+    $pagina2    = isset($_GET['pag2']) ? (int)$_GET['pag2'] : 1;
     $inicio1    = ($pagina1 - 1) * $filasmax1;
     $inicio2    = ($pagina2 - 1) * $filasmax2; 
 
@@ -25,7 +25,7 @@
         <link rel="icon" type="image/*" href="Imagenes/BSFicon.png">
         <title>Tarifas</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="javascript/script.js"></script>
+        <script src="javascript/script.js" defer></script>
     </head>
     <body>
         <div>
@@ -55,13 +55,13 @@
 
         <div>
             <?php if($pagina1 > 1): ?>
-                <a href="tarifas.php?pag=<?php echo $pagina1 - 1; ?>">Anterior</a>
+                <a href="tarifas.php?pag1=<?php echo $pagina1 - 1; ?>">Anterior</a>
             <?php else: ?>
                 <a href="#" style="pointer-events: none;">Anterior</a>
             <?php endif; ?>
 
             <?php if(($pagina1 * $filasmax1) < $maxusutabla1): ?>
-                <a href="tarifas.php?pag=<?php echo $pagina1 + 1; ?>">Siguiente</a>
+                <a href="tarifas.php?pag1=<?php echo $pagina1 + 1; ?>">Siguiente</a>
             <?php else: ?>
                 <a href="#" style="pointer-events: none">Siguiente</a>
             <?php endif; ?>
@@ -70,37 +70,34 @@
         <div>
             <table border="1">
                 <tr>
+                    <th>ID</th>
                     <th>CONDUCTOR</th>
                     <th>UNIDAD</th>
+                    <th>OPCIONES</th>
                 </tr>
-                <?php 
-                    if(mysqli_num_rows($sqlcon) > 0){
-                        while($mostrar2 = mysqli_fetch_assoc($sqlcon)){
-                            echo "<tr>";
-                                echo "<td>" . $mostrar2['nombre'] . "</td>";
-                                echo "<td>" . $mostrar2['unidad'] . "</td>";
-                                echo "<td>
-                                    <a class='' href=\"modificarC.php\"></a>
-                                    <a class='' href=\"eliminarC.php\"></a>
-                                </td>"
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='4'>No hay registros</td></tr>";
-                    }
-                ?>
+                <?php while($mostrar2 = mysqli_fetch_assoc($sqlcon)) {?>
+                <tr id="fila-<?php echo $mostrar2['id']; ?>">
+                    <td><?php echo $mostrar2['id']; ?></td>
+                    <td contenteditable="false" class="editable" data-id="<?php echo $mostrar2['id']; ?>" data-columna="nombre"><?php echo $mostrar2['nombre'] ?></td>
+                    <td contenteditable="false" class="editable" data-id="<?php echo $mostrar2['id']; ?>" data-columna="unidad"><?php echo $mostrar2['unidad'] ?></td>
+                    <td>
+                        <button class="editar-btn" data-id="<?php echo $mostrar2['id']; ?>">Editar</button>
+                        <button class="guardar-btn" data-id="<?php echo $mostrar2['id']; ?>">Guardar</button>
+                    </td>
+                </tr>
+                <?php } ?>
             </table>
         </div>
 
         <div>
-            <?php if($pagina1 > 1): ?>
-                <a href="tarifas.php?pag=<?php echo $pagina1 - 1; ?>">Anterior</a>
+            <?php if($pagina2 > 1): ?>
+                <a href="tarifas.php?pag2=<?php echo $pagina2 - 1; ?>">Anterior</a>
             <?php else: ?>
                 <a href="#" style="pointer-events: none;">Anterior</a>
             <?php endif; ?>
 
-            <?php if(($pagina1 * $filasmax1) < $maxusutabla1): ?>
-                <a href="tarifas.php?pag=<?php echo $pagina1 + 1; ?>">Siguiente</a>
+            <?php if(($pagina2 * $filasmax2) < $maxusutabla2): ?>
+                <a href="tarifas.php?pag2=<?php echo $pagina2 + 1; ?>">Siguiente</a>
             <?php else: ?>
                 <a href="#" style="pointer-events: none">Siguiente</a>
             <?php endif; ?>
