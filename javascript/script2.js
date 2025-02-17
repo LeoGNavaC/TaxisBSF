@@ -1,14 +1,14 @@
-$(document).ready(function() {
-    $(document).on("click", ".editar-btn", function() {
+$(document).ready(function(){
+    $(document).on("click",".Editar-btn", function() {
         let id = $(this).data("id");
-        $("#fila-" + id + " .editable").attr("contenteditable", "true").focus();
+        $("#Fila-" + id + " .Editable").attr("contenteditable","true").focus();
     });
 
-    $(document).on("click", ".guardar-btn", function() {
+    $(document).on("click",".Guardar-btn", function() {
         let id = $(this).data("id");
-        let datos = {};
+        let datos = {}; //Funciona para guardar los datos que nos regrese el json
 
-        $("#fila-" + id + " .editable").each(function() {
+        $("#Fila-" + id + " .Editable").each(function() {
             let columna = $(this).data("columna");
             let valor   = $(this).text();
             datos[columna] = valor;
@@ -16,19 +16,19 @@ $(document).ready(function() {
 
         datos["id"] = id;
 
-        console.log("Datos enviados:", datos); // Debugeamos
+        console.log("Datos enviados: ", datos); //veos que enviamos
 
         $.ajax({
-            url: "tarifasAc.php",
+            url: "tarifasAc2.php",
             type: "POST",
             data: datos,
-            dataType: "json", // IMPORTANTE: Especificar que esperamos un JSON
-            success: function(respuesta) {
+            dataType: "json", //Especificar que esperamos un json
+            succes: function(respuesta) {
                 console.log("Respuesta del servidor:", respuesta);
-                
-                if (respuesta.status === "success") {
+
+                if(respuesta.status === "success") {
                     alert(respuesta.message);
-                    $("#fila-" + id + " .editable").attr("contenteditable", "false");
+                    $("#Fila-" + id + " .Editable").attr("contenteditable", "false");
                 } else {
                     alert("Error: " + respuesta.message);
                 }

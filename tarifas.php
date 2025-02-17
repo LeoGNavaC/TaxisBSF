@@ -26,6 +26,7 @@
         <title>Tarifas</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="javascript/script.js" defer></script>
+        <script src="javascript/script2.js"></script>
     </head>
     <body>
         <div>
@@ -38,15 +39,15 @@
                     <th>PROPINA</th>
                 </tr>
                 <?php while($mostrar1 = mysqli_fetch_assoc($sqlusu)) {?>
-                    <tr id="fila-<?php echo $mostrar1['id']; ?>">
+                    <tr id="Fila-<?php echo $mostrar1['id']; ?>">
                         <td><?php echo $mostrar1['id']; ?></td>
-                        <td contenteditable="false" class="editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="tarifabase"><?php echo $mostrar1['tarifabase']; ?></td>
-                        <td contenteditable="false" class="editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="tarifaporkm"><?php echo $mostrar1['tarifaporkm']; ?></td>
-                        <td contenteditable="false" class="editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="iva"><?php echo $mostrar1['iva']; ?></td>
-                        <td contenteditable="false" class="editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="propina"><?php echo $mostrar1['propina']; ?></td>
+                        <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="tarifabase"><?php echo $mostrar1['tarifabase']; ?></td>
+                        <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="tarifaporkm"><?php echo $mostrar1['tarifaporkm']; ?></td>
+                        <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="iva"><?php echo $mostrar1['iva']; ?></td>
+                        <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="propina"><?php echo $mostrar1['propina']; ?></td>
                         <td>
-                            <button class="editar-btn" data-id="<?php echo $mostrar1['id'] ?>">Editar</button>
-                            <button class="editar-btn" data-id="<?php echo $mostrar1['id'] ?>">Guardar</button>
+                            <button class="Editar-btn" data-id="<?php echo $mostrar1['id'] ?>">Editar</button>
+                            <button class="Guardar-btn" data-id="<?php echo $mostrar1['id'] ?>">Guardar</button>
                         </td>
                     </tr>
                 <?php } ?>
