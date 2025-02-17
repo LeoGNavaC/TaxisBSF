@@ -19,7 +19,7 @@ $(document).ready(function() {
         console.log("Datos enviados:", datos); // Debugeamos
 
         $.ajax({
-            url: "tarifasAc.php",
+            url: "tarifasAc1.php",
             type: "POST",
             data: datos,
             dataType: "json", // IMPORTANTE: Especificar que esperamos un JSON

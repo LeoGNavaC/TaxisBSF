@@ -34,28 +34,26 @@
                 <th>TAG</th>
                 <th>MONTO TOTAL - COBRADO BSF</th>
             </tr>
-            <?php 
-                if (mysqli_num_rows($sqlusu) > 0) {
-                    while ($mostrar = mysqli_fetch_assoc($sqlusu)) {
-                        echo "<tr>";
-                            echo "<td>" . $mostrar['fecha'] . "</td>";
-                            echo "<td>" . $mostrar['unidad'] . "</td>";
-                            echo "<td>" . $mostrar['formadepago'] . "</td>";
-                            echo "<td>" . $mostrar['accion'] . "</td>";
-                            echo "<td>" . $mostrar['nombredelsocio'] . "</td>";
-                            echo "<td>" . $mostrar['origen'] . "</td>";
-                            echo "<td>" . $mostrar['destino'] . "</td>";
-                            echo "<td>" . $mostrar['colonia'] . "</td>";
-                            echo "<td>" . $mostrar['km'] . "</td>";
-                            echo "<td>" . $mostrar['tarifa'] . "</td>";
-                            echo "<td>" . $mostrar['tag'] . "</td>";
-                            echo "<td>" . $mostrar['sumatotaldeviaje'] . "</td>";
-                        echo "</tr>";
-                    }
-                } else {
-                    echo "<tr><td colspan='12'>No hay registros disponibles</td></tr>";
-                }
-            ?>
+            <?php while ($mostrar = mysqli_fetch_assoc($sqlusu)) { ?>
+                <tr>
+                    <td><?php echo $mostrar['fecha'] ?></td>
+                    <td><?php echo $mostrar['formadepago'] ?></td>
+                    <td><?php echo $mostrar['accion'] ?></td>
+                    <td><?php echo $mostrar['nombredelsocio'] ?></td>
+                    <td><?php echo $mostrar['solicituddellamada'] ?></td>
+                    <td><?php echo $mostrar['origen'] ?></td>
+                    <td><?php echo $mostrar['destino'] ?></td>
+                    <td><?php echo $mostrar['colonia'] ?></td>
+                    <td><?php echo $mostrar['km'] ?></td>
+                    <td><?php echo $mostrar['tarifa'] ?></td>
+                    <td><?php echo $mostrar['tiempoextra'] ?></td>
+                    <td><?php echo $mostrar['tag'] ?></td>
+                    <td><?php echo $mostrar['sumatotaldeviaje'] ?></td>
+                    <td><?php echo $mostrar['comentario'] ?></td>
+                    <td><?php echo $mostrar['conductor'] ?></td>
+                    <td><?php echo $mostrar['unidad'] ?></td>
+                </tr>
+            <?php } ?>
         </table>
 
         <div>

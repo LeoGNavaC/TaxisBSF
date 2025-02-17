@@ -7,9 +7,12 @@
   </head>
 
   <body>
-    <h1>Bosques de Santa Fe</h1>
-    <button onclick="window.location.href='registro.php';">Registro</button>
-    <button onclick="window.location.href='serv_realizados.php'">Servicios Realizados</button>
-    <button onclick="window.location.href='tarifas.php'">Tarifas</button>
+    <div class="Principal">
+      <h1>Bosques de Santa Fe</h1>
+    
+      <button onclick="window.location.href='registro.php';">Registro</div>
+      <button onclick="window.location.href='serv_realizados.php'">Servicios Realizados</button>
+      <button onclick="window.location.href='tarifas.php'">Tarifas</button>
+    </div>
   </body>
 </html>

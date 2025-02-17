@@ -25,8 +25,8 @@
         <link rel="icon" type="image/*" href="Imagenes/BSFicon.png">
         <title>Tarifas</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="javascript/script.js" defer></script>
-        <script src="javascript/script2.js"></script>
+        <script src="javascript/scriptT1.js" defer></script>
+        <script src="javascript/scriptT2.js" defer></script>
     </head>
     <body>
         <div>
