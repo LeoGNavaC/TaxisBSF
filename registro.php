@@ -108,5 +108,6 @@
                 <button id="limpiar">Limpiar</button>
             </div>
         </form>
+        <button class="button" onclick="window.location.href='index.php'">Pagina inicial</button>
     </body>
 </html>
