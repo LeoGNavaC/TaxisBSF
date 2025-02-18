@@ -69,7 +69,7 @@
         </div>
 
         <div>
-            <button class="" onclick="window.location.href='tarifasAg1.php?pag2=<?php $pagina2 ?>'">Agregar conductore</button>
+            <button class="" onclick="window.location.href='tarifasAg1.php?pag2=<?php $pagina2 ?>'">Agregar conductores</button>
             <table border="1">
                 <tr>
                     <th>ID</th>
