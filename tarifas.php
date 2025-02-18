@@ -104,5 +104,6 @@
                 <a href="#" style="pointer-events: none">Siguiente</a>
             <?php endif; ?>
         </div>
+        <button class="button" onclick="window.location.href='index.php'">Pagina inicial</button>
     </body>
 </html>
