@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <title>Bosques de Santa Fe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/*" href="Imagenes/BSFicon.png">
+    <link rel="stylesheet" href="estilos/estilos.css">
   </head>
 
   <body>
