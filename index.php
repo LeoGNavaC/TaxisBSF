@@ -2,17 +2,18 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8">
-    <title>Bosques de Santa Fe</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/*" href="Imagenes/BSFicon.png">
-    <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="stylesheet" href="estilos/estilos.css?v=1.0"><!--Con la version podemos ver los cambios del CSS-->
+    <title>Bosques de Santa Fe</title>
   </head>
 
-  <body>
+  <body class="Cuerpo">
     <div class="Principal">
-      <h1>Bosques de Santa Fe</h1>
-    
-      <button class="button" onclick="window.location.href='registro.php';">Registro</div>
+      <img src="Imagenes/BSFicon.png" alt="Logo" class="logo">
+
+      <h1 class="titulo1"><em>Bosques de Santa Fe</em></h1>
+
+      <button class="button" onclick="window.location.href='registro.php';">Registro</button>
       <button class="button" onclick="window.location.href='serv_realizados.php'">Servicios Realizados</button>
       <button class="button" onclick="window.location.href='tarifas.php'">Tarifas</button>
     </div>

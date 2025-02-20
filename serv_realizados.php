@@ -16,6 +16,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="icon" type="image/*" href="Imagenes/BSFicon.png">
+        <link rel="stylesheet" href="estilos/estilos.css">
         <title>Servicios Realizados</title>
     </head>
     <body>

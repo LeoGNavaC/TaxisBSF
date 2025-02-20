@@ -9,6 +9,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="icon" type="image/*" href="Imagenes/BSFicon.png">
+        <link rel="stylesheet" href="estilos/estilos.css">
         <title>Registro</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="javascript/scriptR1.js" defer></script>
@@ -104,8 +105,8 @@
                         </td>
                     </tr>
                 </table>
-                <button type="submit" id="grabar" name="Grabar" value="enviar">Grabar</button>
-                <button id="limpiar">Limpiar</button>
+                <button class="button" type="submit" id="grabar" name="Grabar" value="enviar">Grabar</button>
+                <button class="button" id="limpiar">Limpiar</button>
             </div>
         </form>
         <button class="button" onclick="window.location.href='index.php'">Pagina inicial</button>

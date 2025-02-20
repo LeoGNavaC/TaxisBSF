@@ -23,6 +23,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="icon" type="image/*" href="Imagenes/BSFicon.png">
+        <link rel="stylesheet" href="estilos/estilos.css">
         <title>Tarifas</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="javascript/scriptT1.js" defer></script>

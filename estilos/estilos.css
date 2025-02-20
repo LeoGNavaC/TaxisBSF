@@ -1,0 +1,77 @@
+body {
+    background-image: url(../Imagenes/BSFfondos.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.titulo1 {
+    font-size: 28px; /* Tamaño de la fuente */
+    font-weight: bold; /* Texto en negrita */
+    color: #2c3e50; /* Un tono elegante de azul oscuro */
+    text-align: center; /* Centra el texto */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    text-decoration: underline; /*Para colocar un subrayado*/
+    text-decoration-color: #0bbb37; /* Color al subrayado */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    margin-top: 20px; /* Le da espacio en la parte superior */
+    margin-bottom: 20px; /* Espaciado inferior */
+    padding: 10px 20px; /* Espaciado interno */
+    background: linear-gradient(to right, #00c853, #b2ff59); /* Degradado verde */
+    -webkit-background-clip: text; /* Hace que el texto tome el degradado */
+    color: transparent; /* Oculta el color del texto para mostrar el degradado */
+}
+
+.logo {
+    position: absolute; /* posicionamos la imagen dentro del div */
+    top: 15px; /* Margen superior */
+    left: 310px; /* Margen izquierdo */
+    width: 120px; /* Ajustamos el tamaño de la imagen */
+    height: auto; /* Mantiene la proporcion */
+}
+
+.Principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 50vw; /* Se ajusta a la anchura del view port*/
+    max-width: 400px; /* Maximo de anch0 para que se evite que sea muy grande */
+    min-width: 300px; /* Maximo de ancho para que sea muy pequeño */
+
+    height: 65vh; /* altura relativa a la pantalla */
+    max-height: 500px; /* altura maxima */
+    min-height: 300px; /* altura minima */
+
+    background-color: #ac9494bb;/*#ac949483*/
+
+    position: absolute; /* posicion dependiendo del div respecto al viewport */    
+    top: 50%; /* lo mueve al centro verticalmente */
+    left: 50%; /* lo mueve al centro horizontalmente */
+    transform: translate(-50%, -50%); /* centra completamente */
+
+    padding: 20px; /* espacio interno */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* colocar una sombra suabe */
+}
+
+.button {
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    background-color: #0b8a35 !important;
+    color: white !important;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.button {
+    background-color: #2f8a0b !important;
+}
