@@ -9,7 +9,7 @@
 
   <body class="Cuerpo">
     <div class="Principal">
-      <img src="Imagenes/BSFicon.png" alt="Logo" class="logo">
+      <img src="Imagenes/BSFicon.png" alt="Logo" class="logo1">
 
       <h1 class="titulo1"><em>Bosques de Santa Fe</em></h1>
 

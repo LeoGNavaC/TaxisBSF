@@ -19,43 +19,47 @@
         <link rel="stylesheet" href="estilos/estilos.css">
         <title>Servicios Realizados</title>
     </head>
-    <body>
-        <table border="1">
-            <tr>
-                <th>Fecha</th>
-                <th>UNIDAD</th>
-                <th>FORMA DE PAGO</th>
-                <th>ACCION</th>
-                <th>Nombre</th>
-                <th>ORIGEN</th>
-                <th>DESTINO</th>
-                <th>COLONIA</th>
-                <th>KM</th>
-                <th>TARIFA</th>
-                <th>TAG</th>
-                <th>MONTO TOTAL - COBRADO BSF</th>
-            </tr>
-            <?php while ($mostrar = mysqli_fetch_assoc($sqlusu)) { ?>
-                <tr>
-                    <td><?php echo $mostrar['fecha'] ?></td>
-                    <td><?php echo $mostrar['formadepago'] ?></td>
-                    <td><?php echo $mostrar['accion'] ?></td>
-                    <td><?php echo $mostrar['nombredelsocio'] ?></td>
-                    <td><?php echo $mostrar['solicituddellamada'] ?></td>
-                    <td><?php echo $mostrar['origen'] ?></td>
-                    <td><?php echo $mostrar['destino'] ?></td>
-                    <td><?php echo $mostrar['colonia'] ?></td>
-                    <td><?php echo $mostrar['km'] ?></td>
-                    <td><?php echo $mostrar['tarifa'] ?></td>
-                    <td><?php echo $mostrar['tiempoextra'] ?></td>
-                    <td><?php echo $mostrar['tag'] ?></td>
-                    <td><?php echo $mostrar['sumatotaldeviaje'] ?></td>
-                    <td><?php echo $mostrar['comentario'] ?></td>
-                    <td><?php echo $mostrar['conductor'] ?></td>
-                    <td><?php echo $mostrar['unidad'] ?></td>
-                </tr>
-            <?php } ?>
-        </table>
+    <body class="Cuerpo">
+        <div class="Tabla2">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>UNIDAD</th>
+                        <th>FORMA DE PAGO</th>
+                        <th>ACCION</th>
+                        <th>Nombre</th>
+                        <th>ORIGEN</th>
+                        <th>DESTINO</th>
+                        <th>COLONIA</th>
+                        <th>KM</th>
+                        <th>TARIFA</th>
+                        <th>TAG</th>
+                        <th>MONTO TOTAL - COBRADO BSF</th>
+                    </tr>
+                </thead>
+                <?php while ($mostrar = mysqli_fetch_assoc($sqlusu)) { ?>
+                    <tr>
+                        <td><?php echo $mostrar['fecha'] ?></td>
+                        <td><?php echo $mostrar['formadepago'] ?></td>
+                        <td><?php echo $mostrar['accion'] ?></td>
+                        <td><?php echo $mostrar['nombredelsocio'] ?></td>
+                        <td><?php echo $mostrar['solicituddellamada'] ?></td>
+                        <td><?php echo $mostrar['origen'] ?></td>
+                        <td><?php echo $mostrar['destino'] ?></td>
+                        <td><?php echo $mostrar['colonia'] ?></td>
+                        <td><?php echo $mostrar['km'] ?></td>
+                        <td><?php echo $mostrar['tarifa'] ?></td>
+                        <td><?php echo $mostrar['tiempoextra'] ?></td>
+                        <td><?php echo $mostrar['tag'] ?></td>
+                        <td><?php echo $mostrar['sumatotaldeviaje'] ?></td>
+                        <td><?php echo $mostrar['comentario'] ?></td>
+                        <td><?php echo $mostrar['conductor'] ?></td>
+                        <td><?php echo $mostrar['unidad'] ?></td>
+                    </tr>
+                <?php } ?>
+            </table>
+        </div>
 
         <div>
             <?php if ($pagina > 1): ?>

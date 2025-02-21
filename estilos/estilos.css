@@ -1,4 +1,4 @@
-body {
+.Cuerpo {
     background-image: url(../Imagenes/BSFfondos.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -7,31 +7,6 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-}
-
-.titulo1 {
-    font-size: 28px; /* Tamaño de la fuente */
-    font-weight: bold; /* Texto en negrita */
-    color: #2c3e50; /* Un tono elegante de azul oscuro */
-    text-align: center; /* Centra el texto */
-    text-transform: uppercase; /* Convierte el texto a mayúsculas */
-    text-decoration: underline; /*Para colocar un subrayado*/
-    text-decoration-color: #0bbb37; /* Color al subrayado */
-    letter-spacing: 2px; /* Espaciado entre letras */
-    margin-top: 20px; /* Le da espacio en la parte superior */
-    margin-bottom: 20px; /* Espaciado inferior */
-    padding: 10px 20px; /* Espaciado interno */
-    background: linear-gradient(to right, #00c853, #b2ff59); /* Degradado verde */
-    -webkit-background-clip: text; /* Hace que el texto tome el degradado */
-    color: transparent; /* Oculta el color del texto para mostrar el degradado */
-}
-
-.logo {
-    position: absolute; /* posicionamos la imagen dentro del div */
-    top: 15px; /* Margen superior */
-    left: 310px; /* Margen izquierdo */
-    width: 120px; /* Ajustamos el tamaño de la imagen */
-    height: auto; /* Mantiene la proporcion */
 }
 
 .Principal {
@@ -58,6 +33,107 @@ body {
     padding: 20px; /* espacio interno */
     border-radius: 20px; /* Bordes redondeados */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* colocar una sombra suabe */
+}
+
+.titulo1 {
+    font-size: 28px; /* Tamaño de la fuente */
+    font-weight: bold; /* Texto en negrita */
+    color: #2c3e50; /* Un tono elegante de azul oscuro */
+    text-align: center; /* Centra el texto */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    text-decoration: underline; /*Para colocar un subrayado*/
+    text-decoration-color: #0bbb37; /* Color al subrayado */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    margin-top: 20px; /* Le da espacio en la parte superior */
+    margin-bottom: 20px; /* Espaciado inferior */
+    padding: 10px 20px; /* Espaciado interno */
+    background: linear-gradient(to right, #00c853, #b2ff59); /* Degradado verde */
+    -webkit-background-clip: text; /* Hace que el texto tome el degradado */
+    color: transparent; /* Oculta el color del texto para mostrar el degradado */
+}
+
+.logo1 {
+    position: absolute; /* posicionamos la imagen dentro del div */
+    top: 15px; /* Margen superior */
+    left: 310px; /* Margen izquierdo */
+    width: 120px; /* Ajustamos el tamaño de la imagen */
+    height: auto; /* Mantiene la proporcion */
+}
+
+.logo2 {
+    position: fixed; /* posicionamos la imagen dentro del div */
+    bottom: 15px; /* Distancia desde la parte inferior */
+    right: 15px; /* Distancia desde la parte derecha */
+    width: 150px; /* Ajustamos el tamaño de la imagen */
+    height: auto; /* Mantiene la proporcion */
+}
+
+.Tabla1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 50vw; /* Se ajusta a la anchura del view port*/
+    max-width: 600px; /* Maximo de ancho para que se evite que sea muy grande */
+    min-width: 300px; /* Maximo de ancho para que sea muy pequeño */
+
+    height: 83vh; /* altura relativa a la pantalla */
+    max-height: 500px; /* altura maxima */
+    min-height: 300px; /* altura minima */
+
+    background-color: #ac9494bb;/*#ac949483*/
+
+    position: absolute; /* posicion dependiendo del div respecto al viewport */    
+    top: 50%; /* lo mueve al centro verticalmente */
+    left: 50%; /* lo mueve al centro horizontalmente */
+    transform: translate(-50%, -50%); /* centra completamente */
+
+    padding: 20px; /* espacio interno */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* colocar una sombra suabe */
+}
+
+.Tabla2 table {
+    background-color: white;
+    text-align: left;
+    border: collapse;
+    width: 100%;
+}
+
+.Tabla2 th, td {
+    padding: 10px;
+}
+
+.Tabla2 thead {
+    background-color: #246355;
+    border-bottom: solid 5px #0F362D;
+    color: white;
+}
+
+.Tabla2 tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+.Tabla2 tr:hover td{
+    background-color: #369681;
+    color: white;
+}
+
+.Tregistro {
+    width: 1500px; /* Tamaño fijo en píxeles */
+    max-width: 100%; /* Evita que sea muy grande en pantallas pequeñas */
+    margin: 20px auto; /* Centra la tabla horizontalmente */
+    padding: 15px; /* Reduce el espaciado interno */
+    background: #ffffffe3; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(71, 211, 6, 0.9); /* Sombra suave */
+}
+
+/* Ajustar tamaño de las celdas */
+.Tregistro td, th {
+    padding: 2.1px 10px; /* Reduce el espacio interno de las celdas */
+    font-size: 14px; /* Reduce el tamaño del texto */
 }
 
 .button {

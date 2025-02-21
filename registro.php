@@ -14,101 +14,180 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="javascript/scriptR1.js" defer></script>
     </head>
-    <body>
+    <body class="Cuerpo">
         <form method="post">
-            <div>
-                <table>
+            <div class="Tabla1">
+                <table class="Tregistro">
                     <tr>
                         <td>
                             <label>FECHA:(Se coloca sola)</label>
-                            <input type="datetime" id="txtfecha" name="txtFecha" value="<?php echo date("d/m/y") ?>" readonly>
                         </td>
+
+                        <td>
+                            <input type="datetime" id="txtfecha" name="txtFecha" value="<?php echo date("d/m/y") ?>" readonly>
+                            </td>
+                    </tr>
                     
+                    <tr>
                         <td>
                             <label>FORMA DE PAGO:</label>
+                        </td>
+
+                        <td>
                             <select id="fopa" name="Fopa" required>
                                 <option value="efectivo">EFECTIVO</option>
                                 <option value="terminal">TERMINAL</option>
                             </select>
                         </td>
+                    </tr>
 
+                    <tr>
                         <td>
                             <label>ACCION:</label>
                             <!--En esta parte ira una API que me traiga las acciones de los socios-->
                         </td>
+                    </tr>
 
+                    <tr>
                         <td>
                             <label>NOMBRE DEL SOCIO:</label>
                             <!--Nos dara el nombre dependiendo de la accion-->
                         </td>
+                    </tr>
 
+                    <tr>
                         <td>
                             <label>SOLICITUD DE LLAMADA:</label>
+                        </td>
+
+                        <td>
                             <input type="datetime" id="txtsollama" name="txtSoLlama" value="<?php echo date("h:i:s") ?>" readonly>
                         </td>
+                        
+                    </tr>
 
+                    <tr>
                         <td>
                             <label>ORIGEN:</label>
+                        </td>
+
+                        <td>
                             <input type="text" id="txtorigen" name="txtOrigen" required>
                         </td>
+                    </tr>
 
+                    <tr>
                         <td>
                             <label>DESTINO:</label>
+                        </td>
+
+                        <td>
                             <input type="text" id="txtdestino" name="txtDestino" required>
                         </td>
+                    </tr>
 
+                    <tr>
                         <td>
                             <label>COLONIA:</label>
+                        </td>
+
+                        <td>
                             <input type="text" id="txtcolonia" name="txtColonia" required>
                         </td>
+                    </tr>
 
+                    <tr>
                         <td>
                             <label>KM:</label>
+                        </td>
+
+                        <td>
                             <input type="number" id="txtkm" name="txtKm" required>
                         </td>
+                    </tr>
 
+                    <tr>
                         <td>
                             <label>TARIFA:</label>
+                        </td>
+
+                        <td>
                             <input type="number" id="txttarifa" name="txtTarifa" required>
                         </td>
+                    </tr>
     
+                    <tr>
                         <td>
                             <label>TIEMPO EXTRA:</label>
+                        </td>
+
+                        <td>
                             <input type="number" id="txttiex" name="txtTiex" required>
                         </td>
+                    </tr>
 
+                    <tr>
                         <td>
                             <label>TAG:</label>
+                        </td>
+
+                        <td>
                             <input type="number" id="txttag" name="txtTag" required>
                         </td>
+                    </tr>
 
+                    <tr>
                         <td>
                             <label>SUMA TOTAL DE VIAJE:</label>
-                            <input type="number" id="txtstdv" name="txtSTDV">
                         </td>
 
+                        <td>
+                            <input type="number" id="txtstdv" name="txtSTDV" readonly>
+                        </td>
+                    </tr>
+
+                    <tr>
                         <td>
                             <label>COMENTARIO:</label>
-                            <input type="text" id="txtcomentario" name="txtComentario" required>
                         </td>
 
                         <td>
+                            <input type="text" id="txtcomentario" name="txtComentario" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
                             <label for="select-conductores">CONDUCTOR:</label>
+                        </td>
+
+                        <td>
                             <select id="select-conductores" name="conductor">
                                 <option value="">Cargando...</option>
                             </select>
                         </td>
+                    </tr>
 
+                    <tr>
                         <td>
                             <label>UNIDAD:</label>
+                        </td>
+
+                        <td>
                             <p><span id="unidad-conductor">N/A</span></p>
                         </td>
                     </tr>
+
+                    <tr>
+                        <td>
+                            <button class="button" type="submit" id="grabar" name="Grabar" value="enviar">Grabar</button>
+                            <button class="button" id="limpiar">Limpiar</button>
+                        </td>
+                    </tr>
                 </table>
-                <button class="button" type="submit" id="grabar" name="Grabar" value="enviar">Grabar</button>
-                <button class="button" id="limpiar">Limpiar</button>
             </div>
         </form>
+        <img src="Imagenes/BSFicon.png" alt="Logo" class="logo2">
         <button class="button" onclick="window.location.href='index.php'">Pagina inicial</button>
     </body>
 </html>
