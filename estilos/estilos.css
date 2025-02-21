@@ -99,7 +99,7 @@
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* colocar una sombra suabe */
 }
 
-.Tabla2 {
+.Tsrealizados {
     width: 80%; /* Ajusta el ancho */
     max-width: 1500px; /* Evita que sea demasiado grande */
     margin: 20px auto; /* Centra la tabla y la baja 50px */
@@ -109,7 +109,7 @@
     position: relative; /* Cambia de fixed a relative para mantener el flujo normal */
 }
 
-.Tabla2 table {
+.Tsrealizados table {
     background-color: white;
     text-align: left;
     border: collapse;
@@ -118,21 +118,21 @@
     margin: 50px auto;
 }
 
-.Tabla2 th, td {
+.Tsrealizados th, td {
     padding: 10px;
 }
 
-.Tabla2 thead {
+.Tsrealizados thead {
     background-color: #246355;
     border-bottom: solid 5px #0F362D;
     color: white;
 }
 
-.Tabla2 tr:nth-child(even) {
+.Tsrealizados tr:nth-child(even) {
     background-color: #ddd;
 }
 
-.Tabla2 tr:hover td{
+.Tsrealizados tr:hover td{
     background-color: #369681;
     color: white;
 }
@@ -151,6 +151,46 @@
 .Tregistro td, th {
     padding: 2.1px 10px; /* Reduce el espacio interno de las celdas */
     font-size: 14px; /* Reduce el tamaño del texto */
+}
+
+/* Contenedor de la tabla */
+.Ttarifas table {
+    width: 100%;
+    max-width: 800px; /* Evita que la tabla sea muy ancha */
+    margin: 20px auto; /* Centrada */
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Encabezado */
+.Ttarifas th {
+    background: linear-gradient(to right, #00c853, #b2ff59); /* Degradado */
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Celdas */
+.Ttarifas td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Filas alternas */
+.Ttarifas tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Efecto hover */
+.Ttarifas tr:hover {
+    background-color: #e3f2fd;
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
 }
 
 /**********************************************etiqueta a***************************************/
@@ -174,7 +214,7 @@
 }
 
 .AS a:hover {
-    background-color: #07f171; /* Azul más oscuro al pasar el mouse */
+    background-color: #25c56d; /* Azul más oscuro al pasar el mouse */
     transform: scale(1.1); /* Efecto de agrandado */
 }
 
@@ -194,4 +234,60 @@
 .button:hover {
     background-color: #3cb30d;
     transform: scale(1.1);
+}
+
+.Editar-btn, .Guardar-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.Editar-btn {
+    background-color: #fbc02d;
+    color: white;
+}
+
+.Editar-btn:hover {
+    background-color: #ffa000;
+}
+
+.Guardar-btn {
+    background-color: #388e3c;
+    color: white;
+}
+
+.Guardar-btn:hover {
+    background-color: #2e7d32;
+}
+
+.editar-btn, .guardar-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.editar-btn {
+    background-color: #fbc02d;
+    color: white;
+}
+
+.editar-btn:hover {
+    background-color: #ffa000;
+}
+
+.guardar-btn {
+    background-color: #388e3c;
+    color: white;
+}
+
+.guardar-btn:hover {
+    background-color: #2e7d32;
 }

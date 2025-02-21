@@ -29,8 +29,8 @@
         <script src="javascript/scriptT1.js" defer></script>
         <script src="javascript/scriptT2.js" defer></script>
     </head>
-    <body>
-        <div>
+    <body class="Cuerpo">
+        <div class="Ttarifas">
             <table border="1">
                 <tr>
                     <th>ID</th>
@@ -38,6 +38,7 @@
                     <th>Tarifa por KM</th>
                     <th>IVA</th>
                     <th>PROPINA</th>
+                    <th>OPCIONES</th>
                 </tr>
                 <?php while($mostrar1 = mysqli_fetch_assoc($sqlusu)) {?>
                     <tr id="Fila-<?php echo $mostrar1['id']; ?>">
@@ -55,22 +56,8 @@
             </table>
         </div>
 
-        <div>
-            <?php if($pagina1 > 1): ?>
-                <a href="tarifas.php?pag1=<?php echo $pagina1 - 1; ?>">Anterior</a>
-            <?php else: ?>
-                <a href="#" style="pointer-events: none;">Anterior</a>
-            <?php endif; ?>
-
-            <?php if(($pagina1 * $filasmax1) < $maxusutabla1): ?>
-                <a href="tarifas.php?pag1=<?php echo $pagina1 + 1; ?>">Siguiente</a>
-            <?php else: ?>
-                <a href="#" style="pointer-events: none">Siguiente</a>
-            <?php endif; ?>
-        </div>
-
-        <div>
-            <button class="" onclick="window.location.href='tarifasAg1.php?pag2=<?php $pagina2 ?>'">Agregar conductores</button>
+        <div class="Ttarifas">
+            <button class="button" onclick="window.location.href='tarifasAg1.php?pag2=<?php $pagina2 ?>'">Agregar conductores</button>
             <table border="1">
                 <tr>
                     <th>ID</th>
@@ -92,17 +79,17 @@
             </table>
         </div>
 
-        <div>
+        <div class="AS">
             <?php if($pagina2 > 1): ?>
                 <a href="tarifas.php?pag2=<?php echo $pagina2 - 1; ?>">Anterior</a>
             <?php else: ?>
-                <a href="#" style="pointer-events: none;">Anterior</a>
+                <a href="#" >Anterior</a>
             <?php endif; ?>
 
             <?php if(($pagina2 * $filasmax2) < $maxusutabla2): ?>
                 <a href="tarifas.php?pag2=<?php echo $pagina2 + 1; ?>">Siguiente</a>
             <?php else: ?>
-                <a href="#" style="pointer-events: none">Siguiente</a>
+                <a href="#">Siguiente</a>
             <?php endif; ?>
         </div>
         <button class="button" onclick="window.location.href='index.php'">Pagina inicial</button>

@@ -20,7 +20,7 @@
         <title>Servicios Realizados</title>
     </head>
     <body class="Cuerpo">
-        <div class="Tabla2">
+        <div class="Tsrealizados">
             <table>
                 <thead>
                     <tr>
