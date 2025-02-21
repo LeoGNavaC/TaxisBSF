@@ -45,8 +45,8 @@
                         <td><?php echo $mostrar1['id']; ?></td>
                         <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="tarifabase"><?php echo $mostrar1['tarifabase']; ?></td>
                         <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="tarifaporkm"><?php echo $mostrar1['tarifaporkm']; ?></td>
-                        <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="iva"><?php echo $mostrar1['iva']; ?></td>
-                        <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="propina"><?php echo $mostrar1['propina']; ?></td>
+                        <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="iva"><?php echo $mostrar1['iva']; ?> %</td>
+                        <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="propina"><?php echo $mostrar1['propina']; ?> %</td>
                         <td>
                             <button class="Editar-btn" data-id="<?php echo $mostrar1['id'] ?>">Editar</button>
                             <button class="Guardar-btn" data-id="<?php echo $mostrar1['id'] ?>">Guardar</button>

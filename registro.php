@@ -13,6 +13,7 @@
         <title>Registro</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="javascript/scriptR1.js" defer></script>
+        <script src="javascript/scriptR2.js" defer></script>
     </head>
     <body class="Cuerpo">
         <form method="post">
@@ -24,7 +25,7 @@
                         </td>
 
                         <td>
-                            <input type="datetime" id="txtfecha" name="txtFecha" value="<?php echo date("d/m/y") ?>" readonly>
+                            <input type="datetime" id="txtfecha" name="txtFecha" value="<?php echo date("d/m/y"); ?>" readonly>
                         </td>
                     </tr>
                     
@@ -46,12 +47,20 @@
                             <label>ACCION:</label>
                             <!--En esta parte ira una API que me traiga las acciones de los socios-->
                         </td>
+
+                        <td>
+                            <input type="text" id="txtaccion" name="txtaccion" value="<?php echo "prueba accion"; ?>">
+                        </td>
                     </tr>
 
                     <tr>
                         <td>
                             <label>NOMBRE DEL SOCIO:</label>
                             <!--Nos dara el nombre dependiendo de la accion-->
+                        </td>
+
+                        <td>
+                            <input type="text" id="txtaccion" name="txtaccion" value="<?php echo "prueba nombre del socio"; ?>">
                         </td>
                     </tr>
 
@@ -101,37 +110,7 @@
                         </td>
 
                         <td>
-                            <input type="number" id="txtkm" name="txtKm" required>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>TARIFA:</label>
-                        </td>
-
-                        <td>
-                            <input type="number" id="txttarifa" name="txtTarifa" required>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td>
-                            <label>TIEMPO EXTRA:</label>
-                        </td>
-
-                        <td>
-                            <input type="number" id="txttiex" name="txtTiex" required>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>TAG:</label>
-                        </td>
-
-                        <td>
-                            <input type="number" id="txttag" name="txtTag" required>
+                            <input type="number" id="txtkm" placeholder="KM" required>
                         </td>
                     </tr>
 
@@ -141,7 +120,7 @@
                         </td>
 
                         <td>
-                            <input type="number" id="txtstdv" name="txtSTDV" readonly>
+                            <input type="text" id="sumaTotal" placeholder="Total" readonly>
                         </td>
                     </tr>
 
