@@ -74,6 +74,7 @@
                 <a href="#">Siguiente</a>
             <?php endif; ?>
         </div>
+        <img src="Imagenes/BSFicon.png" alt="Logo" class="logo2">
         <button class="button" onclick="window.location.href='index.php'">Pagina inicial</button>
     </body>
 </html>

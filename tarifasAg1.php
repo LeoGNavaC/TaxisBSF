@@ -39,6 +39,7 @@
             </div>
         </form>
         <p id="mensaje"></p>
+        <img src="Imagenes/BSFicon.png" alt="Logo" class="logo2">
         <button class="button" onclick="window.location.href='tarifas.php'">Pagina inicial</button>
     </body>
 </html>
