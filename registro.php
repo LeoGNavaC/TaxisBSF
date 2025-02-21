@@ -25,7 +25,7 @@
 
                         <td>
                             <input type="datetime" id="txtfecha" name="txtFecha" value="<?php echo date("d/m/y") ?>" readonly>
-                            </td>
+                        </td>
                     </tr>
                     
                     <tr>
@@ -63,7 +63,6 @@
                         <td>
                             <input type="datetime" id="txtsollama" name="txtSoLlama" value="<?php echo date("h:i:s") ?>" readonly>
                         </td>
-                        
                     </tr>
 
                     <tr>
