@@ -61,17 +61,17 @@
             </table>
         </div>
 
-        <div>
+        <div class="AS">
             <?php if ($pagina > 1): ?>
                 <a href="serv_realizados.php?pag=<?php echo $pagina - 1; ?>">Anterior</a>
             <?php else: ?>
-                <a href="#" style="pointer-events: none">Anterior</a>
+                <a href="#">Anterior</a>
             <?php endif; ?>
 
             <?php if (($pagina * $filasmax) < $maxusutabla): ?>
                 <a href="serv_realizados.php?pag=<?php echo $pagina + 1; ?>">Siguiente</a>
             <?php else: ?>
-                <a href="#" style="pointer-events: none">Siguiente</a>
+                <a href="#">Siguiente</a>
             <?php endif; ?>
         </div>
         <button class="button" onclick="window.location.href='index.php'">Pagina inicial</button>

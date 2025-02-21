@@ -1,3 +1,4 @@
+/*******************************************etiqueta body***************************************/
 .Cuerpo {
     background-image: url(../Imagenes/BSFfondos.png);
     background-repeat: no-repeat;
@@ -9,6 +10,7 @@
     padding: 0;
 }
 
+/**********************************************div principal************************************/
 .Principal {
     display: flex;
     flex-direction: column;
@@ -35,6 +37,7 @@
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* colocar una sombra suabe */
 }
 
+/**********************************************etiqueta h***************************************/
 .titulo1 {
     font-size: 28px; /* Tamaño de la fuente */
     font-weight: bold; /* Texto en negrita */
@@ -52,6 +55,7 @@
     color: transparent; /* Oculta el color del texto para mostrar el degradado */
 }
 
+/********************************************etiqueta img***************************************/
 .logo1 {
     position: absolute; /* posicionamos la imagen dentro del div */
     top: 15px; /* Margen superior */
@@ -68,6 +72,7 @@
     height: auto; /* Mantiene la proporcion */
 }
 
+/*******************************etiqueta table, th, tr, thead***********************************/
 .Tabla1 {
     display: flex;
     flex-direction: column;
@@ -94,11 +99,23 @@
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* colocar una sombra suabe */
 }
 
+.Tabla2 {
+    width: 80%; /* Ajusta el ancho */
+    max-width: 1500px; /* Evita que sea demasiado grande */
+    margin: 20px auto; /* Centra la tabla y la baja 50px */
+    max-height: 350px; /* Limita la altura */
+    overflow-y: auto; /* Activa el scroll si hay muchas filas */
+    border: 1px solid #ccc; /* Agrega un borde para que se vea mejor */
+    position: relative; /* Cambia de fixed a relative para mantener el flujo normal */
+}
+
 .Tabla2 table {
     background-color: white;
     text-align: left;
     border: collapse;
-    width: 100%;
+    width: 60%;
+    max-width: 600px;
+    margin: 50px auto;
 }
 
 .Tabla2 th, td {
@@ -136,18 +153,45 @@
     font-size: 14px; /* Reduce el tamaño del texto */
 }
 
+/**********************************************etiqueta a***************************************/
+.AS {
+    display: flex;
+    justify-content: center; /* Centra los enlaces */
+    gap: 20px; /* Espacio entre los enlaces */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.AS a {
+    display: inline-block;
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none; /* Elimina el subrayado */
+    color: white; /* Texto en blanco */
+    background-color: #068565; /* Azul moderno: 007bff */
+    border-radius: 25px; /* Bordes redondeados */
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.AS a:hover {
+    background-color: #07f171; /* Azul más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Efecto de agrandado */
+}
+
+/**********************************************botones******************************************/
 .button {
     padding: 12px 24px;
     margin: 10px;
     font-size: 16px;
     border: none;
     border-radius: 25px;
-    background-color: #0b8a35 !important;
+    background-color: #0b8a35;
     color: white !important;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
-.button {
-    background-color: #2f8a0b !important;
+.button:hover {
+    background-color: #3cb30d;
+    transform: scale(1.1);
 }
