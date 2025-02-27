@@ -37,13 +37,16 @@ $(document).ready(function(){
         }
 
         //realizamos los calculos
-        let resultado1  = (km * tarifas.tarifakm) + tarifas.banderazo; //
-        let propinaR    = resultado1 * (tarifas.propina/100); //propinaR = 119.80 * (tarifas.propina/100) -- tarifas.propina es: 5%
-        let resultado2  = propinaR + resultado1; //resultado2 = propinaR + resultado1 -- propinaR es: 5.99 y resultado1 es: 119.80 y resultado2 es: 125.79
-        let ivaR   = resultado2 * (tarifas.iva/100); //ivaR = 125.79 * (tarifas.iva/100)
-        let grantotal = ivaR + resultado2;//grantotal = ivaR + resultado2
+        let resultado1  = (km * tarifas.tarifakm) + tarifas.banderazo; 
+        let propinaR    = resultado1 * (tarifas.propina/100); 
+        let resultado2  = propinaR + resultado1; 
+        let ivaR    = resultado2 * (tarifas.iva/100); 
+        let grantotal1   = ivaR + resultado2;
+
+        //Redondeo hacia arriba
+        grantotal   = Math.round(grantotal1);
 
         //mostramos el resultado en el campo de sumaTotal
-        $("#sumaTotal").val(grantotal.toFixed(2));
+        $("#sumaTotal").val(grantotal);
     });
 });

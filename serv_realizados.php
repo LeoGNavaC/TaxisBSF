@@ -5,7 +5,7 @@
     $pagina = isset($_GET['pag']) ? (int)$_GET['pag'] : 1;
     $inicio = ($pagina - 1) * $filasmax;
 
-    $sqlusu = mysqli_query($conn, "SELECT id, fecha, formadepago, accion, nombredelsocio, solicituddellamada, origen, destino, colonia, km, tarifa, tiempoextra, tag, sumatotaldeviaje, comentario, conductor, unidad FROM registro ORDER BY id DESC LIMIT $inicio, $filasmax");
+    $sqlusu = mysqli_query($conn, "SELECT id, fecha, formadepago, accion, nombredelsocio, solicituddellamada, origen, destino, colonia, km, sumatotaldeviaje, comentario, conductor, unidad FROM registro ORDER BY id DESC LIMIT $inicio, $filasmax");
 
     $resultadoMaximo = mysqli_query($conn, "SELECT count(*) AS num_registros FROM registro");
     $maxusutabla = mysqli_fetch_assoc($resultadoMaximo)['num_registros'];

@@ -12,11 +12,12 @@
         <link rel="stylesheet" href="estilos/estilos.css">
         <title>Registro</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="javascript/scriptR1.js" defer></script>
-        <script src="javascript/scriptR2.js" defer></script>
+        <script src="javascript/scriptR1.js" defer></script><!--Trae a los conductores-->
+        <script src="javascript/scriptR2.js" defer></script><!--Hace el calculo-->
+        <script src="javascript/scriptR3.js" defer></script><!--Guarda los datos-->
     </head>
     <body class="Cuerpo">
-        <form method="post">
+        <form id="form-registro">
             <div class="Tabla1">
                 <table class="Tregistro">
                     <tr>
@@ -25,7 +26,7 @@
                         </td>
 
                         <td>
-                            <input type="datetime" id="txtfecha" name="txtFecha" value="<?php echo date("d/m/y"); ?>" readonly>
+                            <input type="datetime" id="txtfecha" value="<?php echo date("d/m/y"); ?>" readonly>
                         </td>
                     </tr>
                     
@@ -35,9 +36,10 @@
                         </td>
 
                         <td>
-                            <select id="fopa" name="Fopa" required>
-                                <option value="efectivo">EFECTIVO</option>
-                                <option value="terminal">TERMINAL</option>
+                            <select id="fopa" required>
+                                <option>...</option>
+                                <option value="EFECTIVO">EFECTIVO</option>
+                                <option value="TERMINAL">TERMINAL</option>
                             </select>
                         </td>
                     </tr>
@@ -49,7 +51,7 @@
                         </td>
 
                         <td>
-                            <input type="text" id="txtaccion" name="txtaccion" value="<?php echo "prueba accion"; ?>">
+                            <input type="text" id="txtaccion" value="<?php echo "prueba accion"; ?>">
                         </td>
                     </tr>
 
@@ -60,7 +62,7 @@
                         </td>
 
                         <td>
-                            <input type="text" id="txtaccion" name="txtaccion" value="<?php echo "prueba nombre del socio"; ?>">
+                            <input type="text" id="txtaccionnom" value="<?php echo "prueba nombre del socio"; ?>">
                         </td>
                     </tr>
 
@@ -70,7 +72,7 @@
                         </td>
 
                         <td>
-                            <input type="datetime" id="txtsollama" name="txtSoLlama" value="<?php echo date("h:i:s") ?>" readonly>
+                            <input type="datetime" id="txtsollama" value="<?php echo date("h:i:s") ?>" readonly>
                         </td>
                     </tr>
 
@@ -80,7 +82,7 @@
                         </td>
 
                         <td>
-                            <input type="text" id="txtorigen" name="txtOrigen" required>
+                            <input type="text" id="txtorigen" required>
                         </td>
                     </tr>
 
@@ -90,7 +92,7 @@
                         </td>
 
                         <td>
-                            <input type="text" id="txtdestino" name="txtDestino" required>
+                            <input type="text" id="txtdestino" required>
                         </td>
                     </tr>
 
@@ -100,7 +102,7 @@
                         </td>
 
                         <td>
-                            <input type="text" id="txtcolonia" name="txtColonia" required>
+                            <input type="text" id="txtcolonia" required>
                         </td>
                     </tr>
 
@@ -130,7 +132,7 @@
                         </td>
 
                         <td>
-                            <input type="text" id="txtcomentario" name="txtComentario" required>
+                            <input type="text" id="txtcomentario" required>
                         </td>
                     </tr>
 
@@ -140,7 +142,7 @@
                         </td>
 
                         <td>
-                            <select id="select-conductores" name="conductor">
+                            <select id="select-conductores">
                                 <option value="">Cargando...</option>
                             </select>
                         </td>
@@ -158,8 +160,7 @@
 
                     <tr>
                         <td>
-                            <button class="button" type="submit" id="grabar" name="Grabar" value="enviar">Grabar</button>
-                            <button class="button" id="limpiar">Limpiar</button>
+                            <button class="button" type="submit">Guardar</button><!--El tipo submit hace que se recargue la pagina-->
                         </td>
                     </tr>
                 </table>

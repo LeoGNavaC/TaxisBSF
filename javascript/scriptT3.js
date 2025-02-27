@@ -8,7 +8,10 @@ $(document).ready(function(){
         $.ajax({
             url: "tarifasAg2.php",
             type: "POST",
-            data: {nombre: nombre, unidad: unidad},
+            data: {
+                nombre: nombre, 
+                unidad: unidad
+            },
             dataType: "json",
             success: function(respuesta){
                 $("#mensaje").text(respuesta.message);
