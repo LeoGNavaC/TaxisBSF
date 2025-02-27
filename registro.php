@@ -26,7 +26,7 @@
                         </td>
 
                         <td>
-                            <input type="datetime" id="txtfecha" value="<?php echo date("d/m/y"); ?>" readonly>
+                            <input type="datetime" id="txtfecha" value="<?php echo date("Y-m-d"); ?>" readonly>
                         </td>
                     </tr>
                     

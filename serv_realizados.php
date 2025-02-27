@@ -25,17 +25,18 @@
                 <thead>
                     <tr>
                         <th>Fecha</th>
-                        <th>UNIDAD</th>
-                        <th>FORMA DE PAGO</th>
-                        <th>ACCION</th>
+                        <th>Forma de Pago</th>
+                        <th>Accion</th>
                         <th>Nombre</th>
-                        <th>ORIGEN</th>
-                        <th>DESTINO</th>
-                        <th>COLONIA</th>
+                        <th>Solicitud de Llamada</th>
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Colonia</th>
                         <th>KM</th>
-                        <th>TARIFA</th>
-                        <th>TAG</th>
                         <th>MONTO TOTAL - COBRADO BSF</th>
+                        <th>Comentario</th>
+                        <th>Conductor</th>
+                        <th>Unidad</th>
                     </tr>
                 </thead>
                 <?php while ($mostrar = mysqli_fetch_assoc($sqlusu)) { ?>
@@ -48,10 +49,7 @@
                         <td><?php echo $mostrar['origen'] ?></td>
                         <td><?php echo $mostrar['destino'] ?></td>
                         <td><?php echo $mostrar['colonia'] ?></td>
-                        <td><?php echo $mostrar['km'] ?></td>
-                        <td><?php echo $mostrar['tarifa'] ?></td>
-                        <td><?php echo $mostrar['tiempoextra'] ?></td>
-                        <td><?php echo $mostrar['tag'] ?></td>
+                        <td><?php echo $mostrar['km'] ?> KM</td>
                         <td><?php echo $mostrar['sumatotaldeviaje'] ?></td>
                         <td><?php echo $mostrar['comentario'] ?></td>
                         <td><?php echo $mostrar['conductor'] ?></td>
