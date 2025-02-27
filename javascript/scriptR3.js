@@ -1,42 +1,45 @@
 $(document).ready(function () {
     $("#form-registro").submit(function (e) {
-        e.preventDefault(); // Evita que se recargue la página
+        e.preventDefault();
 
-        // Capturar los valores del formulario
-        let datos = {
-            fecha: $("#txtfecha").val(),
-            formaPago: $("#fopa").val(),
-            accion: $("#txtaccion").val(),
-            accionNombre: $("#txtaccionnom").val(),
-            soloLlamadas: $("#txtsollama").val(),
-            origen: $("#txtorigen").val(),
-            destino: $("#txtdestino").val(),
-            colonia: $("#txtcolonia").val(),
-            km: $("#txtkm").val(),
-            sumaTotal: $("#sumaTotal").val(),
-            comentario: $("#txtcomentario").val(),
-            seleccionConductores: $("#select-conductores").val(),
-            unidadConductores: $("#unidad-conductor").val()
-        };
+        // Capturamos los valores correctamente
+        let select_conductoresJS = $("#select-conductores").val(); // ID del conductor
+        let unidad_conductorJS = $("#unidad-conductor").text(); // Texto de la unidad
 
-        console.log("Datos enviados:", JSON.stringify(datos)); // Verifica en la consola
+        // Verificar qué datos se están enviando
+        console.log("Datos enviados:", {
+            conductor: select_conductoresJS,
+            unidad: unidad_conductorJS
+        });
 
         $.ajax({
             url: "registroAg1.php",
             type: "POST",
-            data: datos,
+            data: {
+                fecha: $("#txtfecha").val(),
+                formaPago: $("#fopa").val(),
+                accion: $("#txtaccion").val(),
+                accionNombre: $("#txtaccionnom").val(),
+                soloLlamadas: $("#txtsollama").val(),
+                origen: $("#txtorigen").val(),
+                destino: $("#txtdestino").val(),
+                colonia: $("#txtcolonia").val(),
+                km: $("#txtkm").val(),
+                sumaTotal: $("#sumaTotal").val(),
+                comentario: $("#txtcomentario").val(),
+                seleccionConductores: select_conductoresJS, // ID del conductor
+                unidadConductores: unidad_conductorJS // Texto de la unidad
+            },
             dataType: "json",
             success: function (respuesta) {
                 console.log("Respuesta del servidor:", respuesta);
-                $("#mensaje").text(respuesta.message);
                 if (respuesta.status === "success") {
                     alert("Datos guardados correctamente");
-                    location.reload(); // Recarga la página después de guardar
+                    location.reload();
                 }
             },
             error: function (xhr, status, error) {
                 console.error("Error en AJAX:", xhr.responseText);
-                $("#mensaje").text("Error en la inserción");
             }
         });
     });

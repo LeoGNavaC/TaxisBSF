@@ -20,7 +20,7 @@ $(document).ready(function() {
 
     //Para detectar si hay un cambio en el select
     $("#select-conductores").change(function() {
-        let unidad = $(this).find(":selected").data("unidad");//obtenemos la unidad del conductor
+        let unidad  = $(this).find(":selected").data("unidad");//obtenemos la unidad del conductor
         $("#unidad-conductor").text(unidad ? unidad : "N/A");//mostramos la unidad
     });
 });

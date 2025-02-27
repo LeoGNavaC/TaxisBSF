@@ -112,7 +112,7 @@
                         </td>
 
                         <td>
-                            <input type="number" id="txtkm" placeholder="KM" required>
+                            <input type="number" id="txtkm" placeholder="KM" required step="any">
                         </td>
                     </tr>
 
