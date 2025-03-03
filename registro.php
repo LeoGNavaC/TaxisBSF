@@ -15,6 +15,7 @@
         <script src="javascript/scriptR1.js" defer></script><!--Trae a los conductores-->
         <script src="javascript/scriptR2.js" defer></script><!--Hace el calculo-->
         <script src="javascript/scriptR3.js" defer></script><!--Guarda los datos-->
+        <script src="javascript/scriptR4.js" defer></script>
     </head>
     <body class="Cuerpo">
         <form id="form-registro">
@@ -51,7 +52,8 @@
                         </td>
 
                         <td>
-                            <input type="text" id="txtaccion" value="<?php echo "prueba accion"; ?>">
+                            <input type="text" id="accion" list="lista-socios" autocomplete="off">
+                            <datalist id="lista-socios"></datalist>
                         </td>
                     </tr>
 
@@ -62,7 +64,7 @@
                         </td>
 
                         <td>
-                            <input type="text" id="txtaccionnom" value="<?php echo "prueba nombre del socio"; ?>">
+                            <input type="text" id="nombre-socio" readonly>
                         </td>
                     </tr>
 

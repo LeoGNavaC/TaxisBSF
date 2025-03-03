@@ -18,8 +18,8 @@ $(document).ready(function () {
             data: {
                 fecha: $("#txtfecha").val(),
                 formaPago: $("#fopa").val(),
-                accion: $("#txtaccion").val(),
-                accionNombre: $("#txtaccionnom").val(),
+                accion: $("#accion").val(),
+                accionNombre: $("#nombre-socio").val(),
                 soloLlamadas: $("#txtsollama").val(),
                 origen: $("#txtorigen").val(),
                 destino: $("#txtdestino").val(),
