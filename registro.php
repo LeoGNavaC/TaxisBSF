@@ -15,7 +15,7 @@
         <script src="javascript/scriptR1.js" defer></script><!--Trae a los conductores-->
         <script src="javascript/scriptR2.js" defer></script><!--Hace el calculo-->
         <script src="javascript/scriptR3.js" defer></script><!--Guarda los datos-->
-        <script src="javascript/scriptR4.js" defer></script>
+        <script src="javascript/scriptR4.js" defer></script><!--API-->
     </head>
     <body class="Cuerpo">
         <form id="form-registro">
@@ -27,7 +27,7 @@
                         </td>
 
                         <td>
-                            <input type="datetime" id="txtfecha" value="<?php echo date("Y-m-d"); ?>" readonly>
+                            <input type="date" id="txtfecha" value="<?php echo date("Y-m-d"); ?>" readonly>
                         </td>
                     </tr>
                     
@@ -52,7 +52,7 @@
                         </td>
 
                         <td>
-                            <input type="text" id="accion" list="lista-socios" autocomplete="off">
+                            <input type="text" id="accion" list="lista-socios" autocomplete="off" required>
                             <datalist id="lista-socios"></datalist>
                         </td>
                     </tr>
@@ -74,7 +74,7 @@
                         </td>
 
                         <td>
-                            <input type="datetime" id="txtsollama" value="<?php echo date("h:i:s") ?>" readonly>
+                            <input type="time" id="txtsollama" value="<?php echo date("h:i:s") ?>" readonly>
                         </td>
                     </tr>
 
@@ -124,7 +124,7 @@
                         </td>
 
                         <td>
-                            <input type="text" id="sumaTotal" placeholder="Total" readonly>
+                            <input type="number" id="sumaTotal" placeholder="Total" readonly>
                         </td>
                     </tr>
 
