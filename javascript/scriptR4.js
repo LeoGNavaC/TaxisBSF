@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        fetch(`http://148.241.201.5:5000//socios?q=${query}`)
+        fetch(`http://148.241.201.13:9500/socios?q=${query}`)
             .then(response => response.json())
             .then(data => {
                 datalist.innerHTML = "";  // Limpiar opciones anteriores
