@@ -138,7 +138,7 @@
                         </td>
 
                         <td>
-                            <input type="time" id="txthoex" required>
+                            <input type="time" id="txthoex">
                         </td>
                     </tr>
 

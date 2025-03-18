@@ -20,7 +20,7 @@
             if($stmt->execute()){
                 echo json_encode(["status" => "success", "message" => "Datos actualizados correctamente"]);
             } else {
-                echo json_encode(["status" => "success", "message" => "Error al actualizar contacte a sistemas: clsoporte3@cgcsf.mx"]);
+                echo json_encode(["status" => "success", "message" => "Error al actualizar contacte a sistemas: soporte3@cgcsf.mx"]);
             }
 
             $stmt->close();
