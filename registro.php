@@ -120,6 +120,30 @@
 
                     <tr>
                         <td>
+                            <label>TAG:</label>
+                        </td>
+
+                        <td>
+                            <select id="tag">
+                                <option>...</option>
+                                <option value="si">Si</option>
+                                <option value="no">No</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>HORAS EXTRA:</label>
+                        </td>
+
+                        <td>
+                            <input type="time" id="txthoex">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
                             <label>SUMA TOTAL DE VIAJE:</label>
                         </td>
 

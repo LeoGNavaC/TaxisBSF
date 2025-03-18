@@ -26,8 +26,8 @@
         <link rel="stylesheet" href="estilos/estilos.css">
         <title>Tarifas</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="javascript/scriptT1.js" defer></script>
-        <script src="javascript/scriptT2.js" defer></script>
+        <script src="javascript/scriptT1.js" defer></script><!--Edita sobre la misma tabla de conductores-->
+        <script src="javascript/scriptT2.js" defer></script><!--Edita sobre la misma tabla de tarifas-->
     </head>
     <body class="Cuerpo">
         <div class="Ttarifas">
