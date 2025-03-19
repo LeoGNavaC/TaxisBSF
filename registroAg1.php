@@ -14,13 +14,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $origen = $_POST['origen'] ?? null;
     $destino = $_POST['destino'] ?? null;
     $colonia = $_POST['colonia'] ?? null;
+    $tag    = $_POST['tag'] ?? null;
     $km = $_POST['km'] ?? null;
+    $horasex    = $_POST['horasex'] ?? null;
     $sumaTotal = $_POST['sumaTotal'] ?? null;
     $comentario = $_POST['comentario'] ?? null;
     $idConductor = $_POST['seleccionConductores'] ?? null; // Recibe el ID del conductor
 
     // Validamos que los datos requeridos no estén vacíos
-    if (!$formaP || !$accion || !$origen || !$destino || !$colonia || !$km || !$comentario || !$idConductor) {
+    if (!$formaP || !$accion || !$origen || !$destino || !$colonia || !$tag || !$km || !$comentario || !$idConductor) {
         echo json_encode(["status" => "error", "message" => "Faltan datos obligatorios"]);
         exit;
     }
@@ -40,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // 🔹 PREPARAMOS LA CONSULTA INSERT
-    $stmt = $conn->prepare("INSERT INTO registro (fecha, formadepago, accion, nombredelsocio, solicituddellamada, origen, destino, colonia, km, sumatotaldeviaje, comentario, conductor, unidad) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO registro (fecha, formadepago, accion, nombredelsocio, solicituddellamada, origen, destino, colonia, tag, km, horasex, sumatotaldeviaje, comentario, conductor, unidad) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     
     if (!$stmt) {
         echo json_encode(["status" => "error", "message" => "Error en la preparación de la consulta"]);
@@ -57,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // 🔹 Vinculamos los parámetros (usamos el nombre en lugar del ID)
-    $stmt->bind_param("ssssssssddsss", $fecha, $formaP, $accion, $accionN, $soloLla, $origen, $destino, $colonia, $km, $sumaTotal, $comentario, $nombreConductor, $unidadC);
+    $stmt->bind_param("sssssssssdddsss", $fecha, $formaP, $accion, $accionN, $soloLla, $origen, $destino, $colonia, $tag, $km, $horasex, $sumaTotal, $comentario, $nombreConductor, $unidadC);
 
     // 🔹 Ejecutamos la consulta
     if ($stmt->execute()) {

@@ -24,7 +24,9 @@ $(document).ready(function () {
                 origen: $("#txtorigen").val(),
                 destino: $("#txtdestino").val(),
                 colonia: $("#txtcolonia").val(),
+                tag: $("#sttag").val(),
                 km: $("#txtkm").val(),
+                horasex: $("#txthoex").val(),
                 sumaTotal: $("#sumaTotal").val(),
                 comentario: $("#txtcomentario").val(),
                 seleccionConductores: select_conductoresJS, // ID del conductor
