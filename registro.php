@@ -74,7 +74,7 @@
                         </td>
 
                         <td>
-                            <input type="time" id="txtsollama" value="<?php echo date("h:i:s") ?>" readonly>
+                            <input type="time" id="txtsollama" value="<?php echo date("H:i:s") ?>" readonly>
                         </td>
                     </tr>
 
@@ -110,6 +110,20 @@
 
                     <tr>
                         <td>
+                            <label>TAG:</label>
+                        </td>
+
+                        <td>
+                            <select id="sttag">
+                                <option>...</option>
+                                <option value="si">Si</option>
+                                <option value="no">No</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
                             <label>KM:</label>
                         </td>
 
@@ -120,25 +134,11 @@
 
                     <tr>
                         <td>
-                            <label>TAG:</label>
-                        </td>
-
-                        <td>
-                            <select id="tag">
-                                <option>...</option>
-                                <option value="si">Si</option>
-                                <option value="no">No</option>
-                            </select>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
                             <label>HORAS EXTRA:</label>
                         </td>
 
                         <td>
-                            <input type="time" id="txthoex">
+                            <input type="text" id="txthoex">
                         </td>
                     </tr>
 
