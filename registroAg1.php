@@ -15,19 +15,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $destino = $_POST['destino'] ?? null;
     $colonia = $_POST['colonia'] ?? null;
     $tag    = $_POST['tag'] ?? null;
+    ($tag === "" || is_nan($tag)) ? $tag = null : $tag = null;//Si viene vacio
     $km = $_POST['km'] ?? null;
     $horasex    = $_POST['horasex'] ?? null;
+    ($horasex === "" || is_nan($horasex)) ? $horasex = null : $horasex = null;
     $sumaTotal = $_POST['sumaTotal'] ?? null;
     $comentario = $_POST['comentario'] ?? null;
     $idConductor = $_POST['seleccionConductores'] ?? null; // Recibe el ID del conductor
 
     // Validamos que los datos requeridos no estén vacíos
-    if (!$formaP || !$accion || !$origen || !$destino || !$colonia || !$tag || !$km || !$comentario || !$idConductor) {
+    if (!$formaP || !$accion || !$origen || !$destino || !$colonia || !$km || !$comentario || !$idConductor) {
         echo json_encode(["status" => "error", "message" => "Faltan datos obligatorios"]);
         exit;
     }
 
-    // 🔹 OBTENEMOS EL NOMBRE Y LA UNIDAD DEL CONDUCTOR
+    // OBTENEMOS EL NOMBRE Y LA UNIDAD DEL CONDUCTOR
     $nombreConductor = null;
     $unidadC = null;
 
