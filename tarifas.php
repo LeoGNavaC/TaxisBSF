@@ -8,7 +8,7 @@
     $inicio1    = ($pagina1 - 1) * $filasmax1;
     $inicio2    = ($pagina2 - 1) * $filasmax2; 
 
-    $sqlusu     = mysqli_query($conn, "SELECT id, tarifabase, tarifaporkm, iva, propina, tag, horasextra FROM tarifas ORDER BY id DESC LIMIT $inicio1, $filasmax1");
+    $sqlusu     = mysqli_query($conn, "SELECT id, tarifabase, tarifaporkm, iva, propina, horasextra FROM tarifas ORDER BY id DESC LIMIT $inicio1, $filasmax1");
     $sqlcon     = mysqli_query($conn, "SELECT id, nombre, unidad FROM conductores ORDER BY id DESC LIMIT $inicio2, $filasmax2");
 
     $resultadoMaximo1   = mysqli_query($conn,"SELECT count(*) AS num_registros1 FROM tarifas");
@@ -38,7 +38,6 @@
                     <th>Tarifa por KM($)</th>
                     <th>IVA(%)</th>
                     <th>Propina(%)</th>
-                    <th>Tag($)</th>
                     <th>Horas Extra($)</th>
                     <th>Opciones</th>
                 </tr>
@@ -49,7 +48,6 @@
                         <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="tarifaporkm"><?php echo $mostrar1['tarifaporkm']; ?></td>
                         <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="iva"><?php echo $mostrar1['iva']; ?></td>
                         <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="propina"><?php echo $mostrar1['propina']; ?></td>
-                        <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="tag"><?php echo $mostrar1['tag']; ?></td>
                         <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="horasextra"><?php echo $mostrar1['horasextra']; ?></td>
                         <td>
                             <button class="Editar-btn" data-id="<?php echo $mostrar1['id'] ?>">Editar</button>
