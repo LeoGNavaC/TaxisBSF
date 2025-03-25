@@ -15,7 +15,7 @@
         <script src="javascript/scriptR1.js" defer></script><!--Trae a los conductores-->
         <script src="javascript/scriptR2.js" defer></script><!--Hace el calculo-->
         <script src="javascript/scriptR3.js" defer></script><!--Guarda los datos-->
-        <script src="javascript/scriptR4.js" defer></script><!--API-->
+        <script src="javascript/scriptR4.js" defer></script><!--API(trae a los socios)-->
     </head>
     <body class="Cuerpo">
         <form id="form-registro">
@@ -23,7 +23,7 @@
                 <table class="Tregistro">
                     <tr>
                         <td>
-                            <label>FECHA:(Se coloca sola)</label>
+                            <label>FECHA:</label>
                         </td>
 
                         <td>
@@ -47,7 +47,7 @@
 
                     <tr>
                         <td>
-                            <label>ACCION:</label>
+                            <label>ACCIÓN:</label>
                             <!--En esta parte ira una API que me traiga las acciones de los socios-->
                         </td>
 
@@ -110,20 +110,6 @@
 
                     <tr>
                         <td>
-                            <label>TAG:</label>
-                        </td>
-
-                        <td>
-                            <select id="sttag">
-                                <option>...</option>
-                                <option value="si">Si</option>
-                                <option value="no">No</option>
-                            </select>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
                             <label>KM:</label>
                         </td>
 
@@ -134,11 +120,31 @@
 
                     <tr>
                         <td>
+                            <label>TAG:</label>
+                        </td>
+
+                        <td>
+                            <input type="number" id="sttag" placeholder="Valor de Tag" step="any">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
                             <label>HORAS EXTRA:</label>
                         </td>
 
                         <td>
-                            <input type="text" id="txthoex">
+                            <input type="number" id="txthoex" placeholder="Horas extra">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>DESCUENTO:</label>    
+                        </td>
+
+                        <td>
+                            <input type="number" id="txtdescuento" placeholder="Descuento">
                         </td>
                     </tr>
 
@@ -168,7 +174,7 @@
                         </td>
 
                         <td>
-                            <select id="select-conductores">
+                            <select id="select-conductores" required>
                                 <option value="">Cargando...</option>
                             </select>
                         </td>
