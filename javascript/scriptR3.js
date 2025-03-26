@@ -24,10 +24,11 @@ $(document).ready(function () {
                 origen: $("#txtorigen").val(),
                 destino: $("#txtdestino").val(),
                 colonia: $("#txtcolonia").val(),
-                tag: $("#sttag").val(),
                 km: $("#txtkm").val(),
+                tag: $("#sttag").val(),
                 horasex: $("#txthoex").val(),
-                sumaTotal: $("#sumaTotal").val(),
+                descuento: $("#txtdescuento").val(),
+                sumaTotal: $("#sumaTotal").val() || 0,
                 comentario: $("#txtcomentario").val(),
                 seleccionConductores: select_conductoresJS, // ID del conductor
                 unidadConductores: unidad_conductorJS // Texto de la unidad

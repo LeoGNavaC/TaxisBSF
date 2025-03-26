@@ -7,22 +7,21 @@
     //Vefiricamos que sea POST la peticion
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Verificamos que si se encuentren todos los datos en el POST
-        if (isset($_POST['id']) && isset($_POST['tarifabase']) && isset($_POST['tarifaporkm']) && isset($_POST['iva']) && isset($_POST['propina']) && isset($_POST['tag']) && isset($_POST['horasextra'])) {
+        if (isset($_POST['id']) && isset($_POST['tarifabase']) && isset($_POST['tarifaporkm']) && isset($_POST['iva']) && isset($_POST['propina']) && isset($_POST['horasextra'])) {
             $id     = $_POST['id'];
             $tarifb = $_POST['tarifabase'];
             $tarifk = $_POST['tarifaporkm'];
             $iva    = $_POST['iva'];
             $propin = $_POST['propina'];
-            $tag    = $_POST['tag'];
             $horex  = $_POST['horasextra'] ;
 
-            $stmt = $conn->prepare("UPDATE tarifas SET tarifabase = ?, tarifaporkm = ?, iva = ?, propina = ?, tag = ?, horasextra = ? WHERE id = ?");
-            $stmt->bind_param("ddddddi", $tarifb, $tarifk, $iva, $propin, $tag, $horex, $id);
+            $stmt = $conn->prepare("UPDATE tarifas SET tarifabase = ?, tarifaporkm = ?, iva = ?, propina = ?, horasextra = ? WHERE id = ?");
+            $stmt->bind_param("dddddi", $tarifb, $tarifk, $iva, $propin, $horex, $id);
 
             if($stmt->execute()){
                 echo json_encode(["status" => "success", "message" => "Datos actualizados correctamente"]);
             } else {
-                echo json_encode(["status" => "success", "message" => "Error al actualizar contacte a sistemas: soporte3@cgcsf.mx"]);
+                echo json_encode(["status" => "error", "message" => "Error al actualizar contacte a sistemas: soporte3@cgcsf.mx"]);
             }
 
             $stmt->close();
