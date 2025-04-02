@@ -23,7 +23,7 @@
                 <table class="Tregistro">
                     <tr>
                         <td>
-                            <label>FECHA:(Se coloca sola)</label>
+                            <label>FECHA:</label>
                         </td>
 
                         <td>
@@ -47,7 +47,7 @@
 
                     <tr>
                         <td>
-                            <label>ACCION:</label>
+                            <label>ACCIÓN:</label>
                             <!--En esta parte ira una API que me traiga las acciones de los socios-->
                         </td>
 
@@ -134,7 +134,17 @@
                         </td>
 
                         <td>
-                            <input type="text" id="txthoex" placeholder="Horas extra">
+                            <input type="number" id="txthoex" placeholder="Horas extra">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>DESCUENTO:</label>    
+                        </td>
+
+                        <td>
+                            <input type="number" id="txtdescuento" placeholder="Descuento">
                         </td>
                     </tr>
 
@@ -164,7 +174,7 @@
                         </td>
 
                         <td>
-                            <select id="select-conductores">
+                            <select id="select-conductores" required>
                                 <option value="">Cargando...</option>
                             </select>
                         </td>

@@ -5,7 +5,7 @@
     $pagina = isset($_GET['pag']) ? (int)$_GET['pag'] : 1;
     $inicio = ($pagina - 1) * $filasmax;
 
-    $sqlusu = mysqli_query($conn, "SELECT id, fecha, formadepago, accion, nombredelsocio, solicituddellamada, origen, destino, colonia, tag, km, horasex, sumatotaldeviaje, comentario, conductor, unidad, viaje FROM registro ORDER BY id DESC LIMIT $inicio, $filasmax");
+    $sqlusu = mysqli_query($conn, "SELECT id, fecha, formadepago, accion, nombredelsocio, solicituddellamada, origen, destino, colonia, tag, km, horasex, descuento, sumatotaldeviaje, comentario, conductor, unidad, viaje FROM registro ORDER BY id DESC LIMIT $inicio, $filasmax");
 
     $resultadoMaximo = mysqli_query($conn, "SELECT count(*) AS num_registros FROM registro");
     $maxusutabla = mysqli_fetch_assoc($resultadoMaximo)['num_registros'];
@@ -39,6 +39,7 @@
                         <th>Tag</th>
                         <th>KM</th>
                         <th>Horas Extra</th>
+                        <th>Descuento</th>
                         <th>MONTO TOTAL - COBRADO BSF</th>
                         <th>Comentario</th>
                         <th>Conductor</th>
@@ -61,6 +62,7 @@
                             <td><?php echo $mostrar['tag'] ?></td>
                             <td><?php echo $mostrar['km']; ?></td>
                             <td><?php echo $mostrar['horasex'] ?></td>
+                            <td><?php echo $mostrar['descuento'] ?></td>
                             <td><?php echo $mostrar['sumatotaldeviaje']; ?></td>
                             <td><?php echo $mostrar['comentario']; ?></td>
                             <td><?php echo $mostrar['conductor']; ?></td>
@@ -86,6 +88,7 @@
                         <th>Tag</th>
                         <th>KM</th>
                         <th>Horas Extra</th>
+                        <th>Descuento</th>
                         <th>MONTO TOTAL - COBRADO BSF</th>
                         <th>Comentario</th>
                         <th>Conductor</th>
