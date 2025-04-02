@@ -13,9 +13,10 @@
         <title>Registro</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="javascript/scriptR1.js" defer></script><!--Trae a los conductores-->
+        <script src="javascript/scriptR4.js" defer></script><!--API(trae a los socios)-->
         <script src="javascript/scriptR2.js" defer></script><!--Hace el calculo-->
         <script src="javascript/scriptR3.js" defer></script><!--Guarda los datos-->
-        <script src="javascript/scriptR4.js" defer></script><!--API(trae a los socios)-->
+
     </head>
     <body class="Cuerpo">
         <form id="form-registro">

@@ -7,16 +7,15 @@
     //Vefiricamos que sea POST la peticion
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //Verificamos que si se encuentren todos los datos en el POST
-        if (isset($_POST['id']) && isset($_POST['tarifabase']) && isset($_POST['tarifaporkm']) && isset($_POST['iva']) && isset($_POST['propina']) && isset($_POST['horasextra'])) {
+        if (isset($_POST['id']) && isset($_POST['tarifabase']) && isset($_POST['tarifaporkm']) && isset($_POST['iva']) && isset($_POST['propina'])) {
             $id     = $_POST['id'];
             $tarifb = $_POST['tarifabase'];
             $tarifk = $_POST['tarifaporkm'];
             $iva    = $_POST['iva'];
             $propin = $_POST['propina'];
-            $horex  = $_POST['horasextra'] ;
 
-            $stmt = $conn->prepare("UPDATE tarifas SET tarifabase = ?, tarifaporkm = ?, iva = ?, propina = ?, horasextra = ? WHERE id = ?");
-            $stmt->bind_param("dddddi", $tarifb, $tarifk, $iva, $propin, $horex, $id);
+            $stmt = $conn->prepare("UPDATE tarifas SET tarifabase = ?, tarifaporkm = ?, iva = ?, propina = ? WHERE id = ?");
+            $stmt->bind_param("ddddi", $tarifb, $tarifk, $iva, $propin, $id);
 
             if($stmt->execute()){
                 echo json_encode(["status" => "success", "message" => "Datos actualizados correctamente"]);
