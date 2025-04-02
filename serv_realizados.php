@@ -88,6 +88,7 @@
                         <th>Tag</th>
                         <th>KM</th>
                         <th>Horas Extra</th>
+                        <th>Descuento</th>
                         <th>MONTO TOTAL - COBRADO BSF</th>
                         <th>Comentario</th>
                         <th>Conductor</th>

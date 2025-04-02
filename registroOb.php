@@ -1,7 +1,7 @@
 <?php 
     include("conexion.php");
 
-    $sql = "SELECT tarifabase, tarifaporkm, iva, propina, horasextra FROM tarifas LIMIT 1";
+    $sql = "SELECT tarifabase, tarifaporkm, iva, propina FROM tarifas LIMIT 1";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -12,7 +12,6 @@
             "tarifaPorKm" => $row["tarifaporkm"],
             "iva" => $row["iva"],
             "propina" => $row["propina"],
-            "horasExtra"    => $row["horasextra"]
         ]);
     } else {
         echo json_encode(["status" => "error"]);

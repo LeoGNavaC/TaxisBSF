@@ -9,12 +9,11 @@ $(document).ready(function(){
             dataType: "json",
             success: function(datos){
                 if (datos.status === "success") {
-                    tarifas = {//trae los datos de la tabla tarifas para ahcer el calculo
+                    tarifas = {//trae los datos de la tabla tarifas para hacer el calculo
                         banderazo: parseFloat(datos.tarifaBase),
                         tarifakm: parseFloat(datos.tarifaPorKm),
                         iva: parseFloat(datos.iva),
-                        propina: parseFloat(datos.propina),
-                        horasex: parseFloat(datos.horasExtra)
+                        propina: parseFloat(datos.propina)
                     };
                 } else {
                     alert("Error al obtener las tarifas");
@@ -51,7 +50,7 @@ $(document).ready(function(){
         grantotal1  += tg; 
 
         //Sumamos las horas extra si existen
-        grantotal1 += (ti * tarifas.horasex);
+        grantotal1 += ti;
 
         //Aplicamos descuento si existe
         if (des > 0) {
