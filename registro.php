@@ -28,7 +28,7 @@
                         </td>
 
                         <td>
-                            <input type="date" id="txtfecha" value="<?php echo date("Y-m-d"); ?>" readonly>
+                            <input type="date" id="txtfecha" readonly>
                         </td>
                     </tr>
                     
@@ -73,7 +73,7 @@
                         </td>
 
                         <td>
-                            <input type="time" id="txtsollama" value="<?php echo date("H:i:s") ?>" readonly>
+                            <input type="time" id="txtsollama" readonly>
                         </td>
                     </tr>
 

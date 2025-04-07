@@ -1,14 +1,21 @@
-window.addEventListener('DOMContentLoaded', () => {
-    // Obtener la fecha y hora del navegador
-    const now = new Date();
+function actualizarFechaYHora() {
+    const ahora = new Date();
 
-    // Formatear fecha como yyyy-mm-dd
-    const fecha = now.toISOString().split('T')[0];
-
-    // Formatear hora como hh:mm:ss
-    const hora = now.toTimeString().split(' ')[0];
-
-    // Asignar a los inputs
+    // FECHA en formato YYYY-MM-DD
+    const fecha = ahora.toISOString().slice(0, 10);
     document.getElementById('txtfecha').value = fecha;
+
+    // HORA en formato HH:mm:ss
+    const horas = ahora.getHours().toString().padStart(2, '0');
+    const minutos = ahora.getMinutes().toString().padStart(2, '0');
+    const segundos = ahora.getSeconds().toString().padStart(2, '0');
+    const hora = `${horas}:${minutos}:${segundos}`;
+
     document.getElementById('txtsollama').value = hora;
-});
+}
+
+// Ejecutamos al inicio
+actualizarFechaYHora();
+
+// Actualizamos cada segundo para que la hora esté viva
+setInterval(actualizarFechaYHora, 1000);
