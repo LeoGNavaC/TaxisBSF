@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     accionInput.addEventListener("input", function () {
         const query = accionInput.value.trim();
         
-        if (query.length < 2) {
+        if (query.length < 1) {
             datalist.innerHTML = "";  // Si es muy corto, limpiamos la lista
             return;
         }

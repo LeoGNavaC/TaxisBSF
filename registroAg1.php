@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $idConductor = $_POST['seleccionConductores'] ?? null; // Recibe el ID del conductor
 
     // Validamos que los datos requeridos no estén vacíos
-    if (!$formaP || !$accion || !$origen || !$destino || !$colonia || !$km || !$comentario || !$idConductor) {
+    if (!$formaP || !$accion || !$origen || !$destino || !$colonia || !$comentario || !$idConductor) {
         echo json_encode(["status" => "error", "message" => "Faltan datos obligatorios"]);
         exit;
     }

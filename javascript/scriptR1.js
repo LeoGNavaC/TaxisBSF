@@ -5,7 +5,7 @@ $(document).ready(function() {
         type: "GET",
         dataType: "json",
         success: function(respuesta) {
-            console.log("Datos recibidos: ", respuesta)
+            //console.log("Choferes: ", respuesta);
             let select = $("#select-conductores");
             select.empty(); //Se limpia el select
             select.append('<option value="">CONDUCTOR</option>');

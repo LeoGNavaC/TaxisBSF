@@ -1,7 +1,5 @@
 <?php
     include('conexion.php');
-
-    date_default_timezone_set('America/Mexico_City');
 ?>
 
 <!DOCTYPE html>
@@ -14,10 +12,12 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="javascript/scriptR1.js" defer></script><!--Trae a los conductores-->
         <script src="javascript/scriptR4.js" defer></script><!--API(trae a los socios)-->
+        <script src="javascript/scriptRFech.js" defer></script><!--Trae la fecha-->
+        <script src="javascript/scriptRFracc.js" defer></script><!--Oculta los campos-->
         <script src="javascript/scriptR2.js" defer></script><!--Hace el calculo-->
         <script src="javascript/scriptR3.js" defer></script><!--Guarda los datos-->
-
     </head>
+
     <body class="Cuerpo">
         <form id="form-registro">
             <div class="Tabla1">
@@ -49,7 +49,6 @@
                     <tr>
                         <td>
                             <label>ACCIÓN:</label>
-                            <!--En esta parte ira una API que me traiga las acciones de los socios-->
                         </td>
 
                         <td>
@@ -61,7 +60,6 @@
                     <tr>
                         <td>
                             <label>NOMBRE DEL SOCIO:</label>
-                            <!--Nos dara el nombre dependiendo de la accion-->
                         </td>
 
                         <td>
@@ -111,17 +109,30 @@
 
                     <tr>
                         <td>
-                            <label>KM:</label>
+                            <label>¿ES UN VIAJE DENTRO DEL FRACCIONAMIENTO?:</label>
                         </td>
 
                         <td>
-                            <input type="number" id="txtkm" placeholder="KM" required step="any">
+                            <select id="slFracc" onchange="mostrarC()">
+                                <option value="no">No</option>
+                                <option value="si">Si</option>
+                            </select>
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <label>TAG:</label>
+                            <label id="lbKM">KM:</label>
+                        </td>
+
+                        <td>
+                            <input type="number" id="txtkm" placeholder="KM" step="any">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label id="lbTAG">TAG:</label>
                         </td>
 
                         <td>
@@ -131,7 +142,7 @@
 
                     <tr>
                         <td>
-                            <label>HORAS EXTRA:</label>
+                            <label id="lbHE">HORAS EXTRA:</label>
                         </td>
 
                         <td>
@@ -141,7 +152,7 @@
 
                     <tr>
                         <td>
-                            <label>DESCUENTO:</label>    
+                            <label id="lbD">DESCUENTO:</label>    
                         </td>
 
                         <td>
@@ -199,6 +210,7 @@
                 </table>
             </div>
         </form>
+
         <img src="Imagenes/BSFicon.png" alt="Logo" class="logo2">
         <button class="button" onclick="window.location.href='index.php'">Pagina inicial</button>
     </body>
