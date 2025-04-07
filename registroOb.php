@@ -11,7 +11,7 @@
             "tarifaBase" => $row["tarifabase"],
             "tarifaPorKm" => $row["tarifaporkm"],
             "iva" => $row["iva"],
-            "propina" => $row["propina"]
+            "propina" => $row["propina"],
         ]);
     } else {
         echo json_encode(["status" => "error"]);

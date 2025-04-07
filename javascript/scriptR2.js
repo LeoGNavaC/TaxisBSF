@@ -9,7 +9,7 @@ $(document).ready(function(){
             dataType: "json",
             success: function(datos){
                 if (datos.status === "success") {
-                    tarifas = {
+                    tarifas = {//trae los datos de la tabla tarifas para hacer el calculo
                         banderazo: parseFloat(datos.tarifaBase),
                         tarifakm: parseFloat(datos.tarifaPorKm),
                         iva: parseFloat(datos.iva),
@@ -28,25 +28,36 @@ $(document).ready(function(){
     obtenerTarifas(); // llamamos a la funcion y traemos los datos
 
     //Con esto detectamos algunos cambios en el campo KM y calculamos automaticamente
-    $("#txtkm").on("input", function() {
-        let km = parseFloat($(this).val()); //obtenemos el valor del campo KM
+    $("#txtdescuento, #txtkm, #sttag, #txthoex").on("input", function() {
+        let km  = parseFloat($("#txtkm").val()); //obtenemos el valor del campo KM
+        let tg  = parseFloat($("#sttag").val()) || 0; //obtenemos el valor del campo TAG y evitamos si esta vacio tomamos cero
+        let ti  = parseFloat($("#txthoex").val()) || 0; //obtenemos el valor del campo HORAS EXTRA y evitamos si esta vacio tomamos cero
+        let des  = parseFloat($("#txtdescuento").val()) || 0;//obtenemos el valor del campo DESCUENTO y evitamos si esta vacio tomamos cero
 
         if (isNaN(km) || km <= 0) {
             $("#sumaTotal").val("");//limpiamos si el valor no es valido
             return;
         }
 
-        //realizamos los calculos
+        //Calculo inicial tomando el IVA, KM, Propina, y la tarifa base esos son de cajon
         let resultado1  = (km * tarifas.tarifakm) + tarifas.banderazo; 
         let propinaR    = resultado1 * (tarifas.propina/100); 
         let resultado2  = propinaR + resultado1; 
         let ivaR    = resultado2 * (tarifas.iva/100); 
         let grantotal1   = ivaR + resultado2;
 
-        //Redondeo hacia arriba
-        grantotal   = Math.round(grantotal1);
+        //Sumamos el TAG si existe
+        grantotal1  += tg; 
 
-        //mostramos el resultado en el campo de sumaTotal
-        $("#sumaTotal").val(grantotal);
+        //Sumamos las horas extra si existen
+        grantotal1 += ti;
+
+        //Aplicamos descuento si existe
+        if (des > 0) {
+            let desR    = grantotal1 * (des / 100);
+            grantotal1  -= desR;
+        }
+
+        $("#sumaTotal").val(Math.round(grantotal1));
     });
 });

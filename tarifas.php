@@ -26,27 +26,27 @@
         <link rel="stylesheet" href="estilos/estilos.css">
         <title>Tarifas</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="javascript/scriptT1.js" defer></script><!--Edita sobre la misma tabla de conductores-->
         <script src="javascript/scriptT2.js" defer></script><!--Edita sobre la misma tabla de tarifas-->
+        <script src="javascript/scriptT1.js" defer></script><!--Edita sobre la misma tabla de conductores-->
     </head>
     <body class="Cuerpo">
         <div class="Ttarifas">
             <table border="1">
                 <tr>
                     <th>ID</th>
-                    <th>Tarifa base</th>
-                    <th>Tarifa por KM</th>
-                    <th>IVA</th>
-                    <th>PROPINA</th>
-                    <th>OPCIONES</th>
+                    <th>Tarifa base($)</th>
+                    <th>Tarifa por KM($)</th>
+                    <th>IVA(%)</th>
+                    <th>Propina(%)</th>
+                    <th>Opciones</th>
                 </tr>
                 <?php while($mostrar1 = mysqli_fetch_assoc($sqlusu)) {?>
                     <tr id="Fila-<?php echo $mostrar1['id']; ?>">
                         <td><?php echo $mostrar1['id']; ?></td>
                         <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="tarifabase"><?php echo $mostrar1['tarifabase']; ?></td>
                         <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="tarifaporkm"><?php echo $mostrar1['tarifaporkm']; ?></td>
-                        <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="iva"><?php echo $mostrar1['iva']; ?> %</td>
-                        <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="propina"><?php echo $mostrar1['propina']; ?> %</td>
+                        <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="iva"><?php echo $mostrar1['iva']; ?></td>
+                        <td contenteditable="false" class="Editable" data-id="<?php echo $mostrar1['id']; ?>" data-columna="propina"><?php echo $mostrar1['propina']; ?></td>
                         <td>
                             <button class="Editar-btn" data-id="<?php echo $mostrar1['id'] ?>">Editar</button>
                             <button class="Guardar-btn" data-id="<?php echo $mostrar1['id'] ?>">Guardar</button>

@@ -1,7 +1,5 @@
 <?php
     include('conexion.php');
-
-    date_default_timezone_set('America/Mexico_City');
 ?>
 
 <!DOCTYPE html>
@@ -13,17 +11,20 @@
         <title>Registro</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="javascript/scriptR1.js" defer></script><!--Trae a los conductores-->
+        <script src="javascript/scriptR4.js" defer></script><!--API(trae a los socios)-->
+        <script src="javascript/scriptRFech.js" defer></script><!--Trae la fecha-->
+        <script src="javascript/scriptRFracc.js" defer></script><!--Oculta los campos-->
         <script src="javascript/scriptR2.js" defer></script><!--Hace el calculo-->
         <script src="javascript/scriptR3.js" defer></script><!--Guarda los datos-->
-        <script src="javascript/scriptR4.js" defer></script><!--API-->
     </head>
+
     <body class="Cuerpo">
         <form id="form-registro">
             <div class="Tabla1">
                 <table class="Tregistro">
                     <tr>
                         <td>
-                            <label>FECHA:(Se coloca sola)</label>
+                            <label>FECHA:</label>
                         </td>
 
                         <td>
@@ -47,8 +48,7 @@
 
                     <tr>
                         <td>
-                            <label>ACCION:</label>
-                            <!--En esta parte ira una API que me traiga las acciones de los socios-->
+                            <label>ACCIÓN:</label>
                         </td>
 
                         <td>
@@ -60,7 +60,6 @@
                     <tr>
                         <td>
                             <label>NOMBRE DEL SOCIO:</label>
-                            <!--Nos dara el nombre dependiendo de la accion-->
                         </td>
 
                         <td>
@@ -74,7 +73,7 @@
                         </td>
 
                         <td>
-                            <input type="time" id="txtsollama" value="<?php echo date("h:i:s") ?>" readonly>
+                            <input type="time" id="txtsollama" value="<?php echo date("H:i:s") ?>" readonly>
                         </td>
                     </tr>
 
@@ -110,35 +109,54 @@
 
                     <tr>
                         <td>
-                            <label>KM:</label>
+                            <label>¿ES UN VIAJE DENTRO DEL FRACCIONAMIENTO?:</label>
                         </td>
 
                         <td>
-                            <input type="number" id="txtkm" placeholder="KM" required step="any">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <label>TAG:</label>
-                        </td>
-
-                        <td>
-                            <select id="tag">
-                                <option>...</option>
-                                <option value="si">Si</option>
+                            <select id="slFracc" onchange="mostrarC()">
                                 <option value="no">No</option>
+                                <option value="si">Si</option>
                             </select>
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <label>HORAS EXTRA:</label>
+                            <label id="lbKM">KM:</label>
                         </td>
 
                         <td>
-                            <input type="time" id="txthoex">
+                            <input type="number" id="txtkm" placeholder="KM" step="any">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label id="lbTAG">TAG:</label>
+                        </td>
+
+                        <td>
+                            <input type="number" id="sttag" placeholder="Valor de Tag" step="any">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label id="lbHE">HORAS EXTRA:</label>
+                        </td>
+
+                        <td>
+                            <input type="number" id="txthoex" placeholder="Horas extra">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label id="lbD">DESCUENTO:</label>    
+                        </td>
+
+                        <td>
+                            <input type="number" id="txtdescuento" placeholder="Descuento">
                         </td>
                     </tr>
 
@@ -168,7 +186,7 @@
                         </td>
 
                         <td>
-                            <select id="select-conductores">
+                            <select id="select-conductores" required>
                                 <option value="">Cargando...</option>
                             </select>
                         </td>
@@ -192,6 +210,7 @@
                 </table>
             </div>
         </form>
+
         <img src="Imagenes/BSFicon.png" alt="Logo" class="logo2">
         <button class="button" onclick="window.location.href='index.php'">Pagina inicial</button>
     </body>

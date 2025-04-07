@@ -25,7 +25,10 @@ $(document).ready(function () {
                 destino: $("#txtdestino").val(),
                 colonia: $("#txtcolonia").val(),
                 km: $("#txtkm").val(),
-                sumaTotal: $("#sumaTotal").val(),
+                tag: $("#sttag").val(),
+                horasex: $("#txthoex").val(),
+                descuento: $("#txtdescuento").val(),
+                sumaTotal: $("#sumaTotal").val() || 0,
                 comentario: $("#txtcomentario").val(),
                 seleccionConductores: select_conductoresJS, // ID del conductor
                 unidadConductores: unidad_conductorJS // Texto de la unidad
